@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.teacher.MainController">
+    <children>
+        <VBox layoutY="38.0" prefHeight="762.0" prefWidth="167.0">
+            <children>
+                <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="31.0" prefWidth="129.0" text="个人信息">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label prefHeight="20.0" prefWidth="96.0" text="(1)教师号">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="a_main_tid" editable="false" prefHeight="30.0" prefWidth="167.0" />
+                <Label prefHeight="17.0" prefWidth="54.0" text="(2)姓名">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="a_main_name" editable="false" prefHeight="33.0" prefWidth="167.0" />
+                <Label prefHeight="19.0" prefWidth="116.0" text="(3)职称">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="a_main_title" editable="false" prefHeight="30.0" prefWidth="167.0" />
+            <Label prefHeight="24.0" prefWidth="104.0" text="(4)学院">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="a_main_school" editable="false" />
+            <Label prefHeight="24.0" prefWidth="104.0" text="(5)性别">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="a_main_sex" editable="false" />
+            <Label prefHeight="24.0" prefWidth="104.0" text="(6)手机号">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="a_main_phonenumber" editable="false" />
+            <Label prefHeight="24.0" prefWidth="104.0" text="(7)邮箱">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="a_main_email" editable="false" />
+            <Label prefHeight="24.0" prefWidth="104.0" text="(8)办公室地址">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="a_main_address" editable="false" />
+            <Label prefHeight="24.0" prefWidth="104.0" text="(9)身份证号">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="a_main_idcard" editable="false" />
+                <Button fx:id="btn_cancel" alignment="CENTER" mnemonicParsing="false" onAction="#CancelEvent" prefHeight="39.0" prefWidth="86.0" text="取消" visible="false">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btn_alter" mnemonicParsing="false" prefHeight="32.0" prefWidth="200.0" text="右键点击修改">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="change_password" mnemonicParsing="false" onAction="#change_password_event" text="修改密码" />
+                        <MenuItem fx:id="change_phonenumber" mnemonicParsing="false" onAction="#change_phonenumber_event" text="修改手机号" />
+                        <MenuItem fx:id="change_email" mnemonicParsing="false" onAction="#change_email_event" text="修改邮箱" />
+                        <MenuItem fx:id="change_address" mnemonicParsing="false" onAction="#change_address_event" text="修改办公室地址" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+                </Button>
+            </children>
+        </VBox>
+        <Label layoutX="440.0" prefHeight="116.0" prefWidth="300.0" text="教师教务系统">
+            <font>
+                <Font size="50.0" />
+            </font>
+        </Label>
+        <ListView fx:id="CourseList" layoutX="176.0" layoutY="116.0" prefHeight="260.0" prefWidth="414.0" visible="false" />
+      <Accordion layoutX="328.0" layoutY="122.0" />
+      <SplitPane dividerPositions="0.5" layoutX="168.0" prefHeight="800.0" prefWidth="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="797.0" prefWidth="0.0" />
+        </items>
+      </SplitPane>
+      <TabPane layoutX="178.0" layoutY="86.0" prefHeight="713.0" prefWidth="943.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="查看所有课程课程">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableview1" prefHeight="687.0" prefWidth="943.0">
+                           <columns>
+                              <TableColumn fx:id="col_id1" prefWidth="52.6666259765625" sortable="false" text="课程序列" />
+                              <TableColumn fx:id="col_cid1" prefWidth="48.66664123535156" sortable="false" text="课程号" />
+                              <TableColumn fx:id="col_c_name1" prefWidth="78.0" sortable="false" text="课程名" />
+                              <TableColumn fx:id="col_c_info1" prefWidth="197.33334350585938" sortable="false" text="简介" />
+                              <TableColumn fx:id="col_c_time1" prefWidth="61.33331298828125" sortable="false" text="上课时间" />
+                              <TableColumn fx:id="col_c_init1" prefWidth="58.6666259765625" sortable="false" text="开始时间" />
+                              <TableColumn fx:id="col_c_end1" prefWidth="64.0" sortable="false" text="结束时间" />
+                              <TableColumn fx:id="col_c_location1" prefWidth="61.33331298828125" sortable="false" text="上课教室" />
+                              <TableColumn fx:id="col_c_type1" prefWidth="66.0" sortable="false" text="课程类型" />
+                              <TableColumn fx:id="col_c_school1" prefWidth="79.3333740234375" sortable="false" text="课程所属学院" />
+                              <TableColumn fx:id="col_c_period1" prefWidth="58.6666259765625" sortable="false" text="课程学时" />
+                              <TableColumn fx:id="col_c_capacity1" minWidth="0.0" prefWidth="61.33343505859375" sortable="false" text="课程容量" />
+                              <TableColumn fx:id="col_c_current1" prefWidth="57.333251953125" sortable="false" text="已选人数" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="查看名下课程">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableview11" prefHeight="687.0" prefWidth="943.0">
+                           <columns>
+                              <TableColumn fx:id="col_id11" prefWidth="52.6666259765625" sortable="false" text="课程序列" />
+                              <TableColumn fx:id="col_cid11" prefWidth="48.66664123535156" sortable="false" text="课程号" />
+                              <TableColumn fx:id="col_c_name11" prefWidth="78.0" sortable="false" text="课程名" />
+                              <TableColumn fx:id="col_c_info11" prefWidth="197.33334350585938" sortable="false" text="简介" />
+                              <TableColumn fx:id="col_c_time11" prefWidth="61.33331298828125" sortable="false" text="上课时间" />
+                              <TableColumn fx:id="col_c_init11" prefWidth="58.6666259765625" sortable="false" text="开始时间" />
+                              <TableColumn fx:id="col_c_end11" prefWidth="64.0" sortable="false" text="结束时间" />
+                              <TableColumn fx:id="col_c_location11" prefWidth="61.33331298828125" sortable="false" text="上课教室" />
+                              <TableColumn fx:id="col_c_type11" prefWidth="66.0" sortable="false" text="课程类型" />
+                              <TableColumn fx:id="col_c_school11" prefWidth="79.3333740234375" sortable="false" text="课程所属学院" />
+                              <TableColumn fx:id="col_c_period11" prefWidth="58.6666259765625" sortable="false" text="课程学时" />
+                              <TableColumn fx:id="col_c_capacity11" minWidth="0.0" prefWidth="61.33343505859375" sortable="false" text="课程容量" />
+                              <TableColumn fx:id="col_c_current11" prefWidth="57.333251953125" sortable="false" text="已选人数" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="teacher_add_course" layoutX="1043.0" layoutY="46.0" mnemonicParsing="false" onAction="#teacher_add_course_event" prefHeight="39.0" prefWidth="77.0" text="添加课程" />
+    </children>
+</AnchorPane>

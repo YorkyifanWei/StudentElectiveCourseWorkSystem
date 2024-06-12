@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="653.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.ModifyCouController">
+    <children>
+        <Label alignment="CENTER" layoutX="28.0" layoutY="30.0" prefHeight="34.0" prefWidth="58.0" text="编号：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CouId" editable="false" layoutX="86.0" layoutY="36.0" prefHeight="23.0" prefWidth="307.0" />
+        <Label layoutX="28.0" layoutY="83.0" prefHeight="34.0" prefWidth="77.0" text="课程名：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="28.0" layoutY="126.0" prefHeight="34.0" prefWidth="88.0" text="上课时间:">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="310.0" prefHeight="34.0" prefWidth="58.0" text="类型：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="28.0" layoutY="350.0" prefHeight="34.0" prefWidth="98.0" text="开课单位：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="28.0" layoutY="392.0" prefHeight="34.0" prefWidth="58.0" text="学时：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="28.0" layoutY="437.0" prefHeight="34.0" prefWidth="98.0" text="最大容量：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="31.0" layoutY="482.0" text="简介：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CouName" layoutX="96.0" layoutY="88.0" prefHeight="23.0" prefWidth="288.0" />
+        <TextField fx:id="CouType" layoutX="96.0" layoutY="316.0" prefHeight="23.0" prefWidth="307.0" />
+        <TextArea fx:id="CouInfo" layoutX="30.0" layoutY="513.0" prefHeight="167.0" prefWidth="372.0" />
+        <TextField fx:id="CouTime" layoutX="119.0" layoutY="132.0" prefHeight="23.0" prefWidth="260.0" />
+        <TextField fx:id="CouSchool" layoutX="120.0" layoutY="356.0" prefHeight="23.0" prefWidth="271.0" />
+        <TextField fx:id="CouPeriod" layoutX="87.0" layoutY="398.0" prefHeight="23.0" prefWidth="307.0" />
+        <TextField fx:id="CouCapacity" layoutX="123.0" layoutY="443.0" prefHeight="23.0" prefWidth="271.0" />
+        <Button fx:id="btn_set" layoutX="92.0" layoutY="694.0" mnemonicParsing="false" onAction="#SetEvent" prefHeight="39.0" prefWidth="68.0" text="确定">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Button fx:id="btn_cancel" layoutX="249.0" layoutY="694.0" mnemonicParsing="false" onAction="#CancelEvent" prefHeight="39.0" prefWidth="68.0" text="取消">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Label layoutX="28.0" layoutY="218.0" prefHeight="34.0" prefWidth="98.0" text="开课时间：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="28.0" layoutY="264.0" prefHeight="34.0" prefWidth="98.0" text="结课时间：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CouInit" layoutX="123.0" layoutY="224.0" prefHeight="23.0" prefWidth="271.0" />
+        <TextField fx:id="CouEnd" layoutX="123.0" layoutY="270.0" prefHeight="23.0" prefWidth="271.0" />
+        <Label layoutX="28.0" layoutY="173.0" prefHeight="34.0" prefWidth="98.0" text="上课地点：">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CouLocation" layoutX="120.0" layoutY="179.0" prefHeight="23.0" prefWidth="271.0" />
+    </children>
+</AnchorPane>
