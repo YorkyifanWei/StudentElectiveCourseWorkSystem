@@ -7,7 +7,7 @@
 ## 核心贡献者
 
 - **后端开发者**：[邱健珏，YorkyifanWei]
-- **前端开发者**：[韩硕，吕祖灿]
+- **前端开发者**：[super-chickenman，吕祖灿]
 - **文档撰写**：[邱健珏，YorkyifanWei]
 
 ## 技术架构
@@ -27,7 +27,7 @@
 ### 克隆项目
 
 ``` bash
-git clone https://github.com/YorkyifanWei/StudentElectiveCourseSystem.git
+git clone https://github.com/YorkyifanWei/StudentElectiveCourseWorkSystem.git
 cd your-project-name
 ```
 
