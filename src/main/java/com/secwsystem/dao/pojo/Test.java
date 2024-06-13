@@ -1,7 +1,5 @@
 package com.secwsystem.dao.pojo;
 
-import com.secwsystem.dao.impl.AdminDAO;
-
 import java.util.ArrayList;
 
 public class Test {

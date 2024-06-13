@@ -41,25 +41,20 @@ public class TeacherLoginController implements Initializable {
 
     public void LoginEvent() throws IOException {
         //这里需要数据库
-        //TODO
         try{
             //判断账号名非空，否则执行if
-            //TODO
             if(a_login_tid.getText().trim().isEmpty()){
                 throw new Exception.IdNullException();
             }
             //判断密码非空，否则执行if
-            //TODO
             if(a_login_password.getText().trim().isEmpty()){
                 throw new Exception.PasswordNullException();
             }
             //判断用户名是否存在，否则执行if
-            //TODO
            // if(){
                 //throw new Exception.IdNotExistException();
             //}
             //判断密码是否正确，否则执行if
-            //TODO
             //if(){
                //throw new Exception.PasswordErrorException();
            // }

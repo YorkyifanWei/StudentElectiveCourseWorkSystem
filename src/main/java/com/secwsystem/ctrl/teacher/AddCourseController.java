@@ -74,7 +74,6 @@ public class AddCourseController {
     void SetEvent(){
         //把所有输入信息上传到数据库
         //我不知道后端数据格式，暂时没做防恶意输入，麻烦后端人员告知
-        //TODO
         try{
             Course course = new Course();
             CourseDAO courseDAO = new CourseDAO();

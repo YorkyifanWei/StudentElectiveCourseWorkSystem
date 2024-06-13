@@ -1,11 +1,7 @@
 package com.secwsystem.ctrl.teacher;
 
-import com.secwsystem.app.Student;
 import com.secwsystem.app.Teacher;
-import com.secwsystem.ctrl.student.StudentLoginController;
-import com.secwsystem.dao.impl.StudentDAO;
 import com.secwsystem.dao.impl.TeacherDAO;
-import com.secwsystem.dao.pojo.StudentPrivate;
 import com.secwsystem.dao.pojo.TeacherPrivate;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

@@ -1,12 +1,7 @@
 package com.secwsystem.ctrl.student;
 
-import com.secwsystem.app.Admin;
 import com.secwsystem.app.Student;
-import com.secwsystem.ctrl.admin.AdminLoginController;
-import com.secwsystem.ctrl.admin.MainController;
-import com.secwsystem.dao.impl.AdminDAO;
 import com.secwsystem.dao.impl.StudentDAO;
-import com.secwsystem.dao.pojo.AdminPrivate;
 import com.secwsystem.dao.pojo.StudentPrivate;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -49,7 +44,6 @@ public class ChangePasswordController {
             }
             if(new Student().showMessage("提示","确定修改密码？", Alert.AlertType.CONFIRMATION,1)){
                 //将新密码上传到数据库
-                //TODO
                 StudentLoginController controller = (StudentLoginController) Context.controllers.get(StudentLoginController.class.getSimpleName());
                 StudentDAO studentDAO = new StudentDAO();
                 StudentPrivate studentPrivate = studentDAO.getPrivate(controller.getsid());

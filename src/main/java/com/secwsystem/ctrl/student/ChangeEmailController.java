@@ -44,7 +44,6 @@ public class ChangeEmailController {
             }
             if(new Student().showMessage("提示","确定修改邮箱？", Alert.AlertType.CONFIRMATION,1)){
                 //将新密码上传到数据库
-                //TODO
                 StudentLoginController controller = (StudentLoginController) Context.controllers.get(StudentLoginController.class.getSimpleName());
                 StudentDAO studentDAO = new StudentDAO();
                 StudentPrivate studentPrivate = studentDAO.getPrivate(controller.getsid());
@@ -61,7 +60,7 @@ public class ChangeEmailController {
         } catch (Exception.PasswordNullException e) {
             new Student().showMessage("邮箱修改失败","新邮箱不能为空", Alert.AlertType.ERROR,0);
         } catch (Exception.ChangePasswordException e) {
-           new Student().showMessage("邮箱修改失败","邮箱修改失败", Alert.AlertType.ERROR,0);
+            new Student().showMessage("邮箱修改失败","邮箱修改失败", Alert.AlertType.ERROR,0);
         }
     }
 

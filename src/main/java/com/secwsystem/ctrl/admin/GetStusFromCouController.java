@@ -2,10 +2,8 @@ package com.secwsystem.ctrl.admin;
 
 import com.secwsystem.app.Admin;
 import com.secwsystem.dao.impl.StudentDAO;
-import com.secwsystem.dao.impl.TeacherDAO;
 import com.secwsystem.dao.pojo.Course;
 import com.secwsystem.dao.pojo.StudentPrivate;
-import com.secwsystem.dao.pojo.TeacherPrivate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

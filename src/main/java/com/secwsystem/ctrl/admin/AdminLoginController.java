@@ -1,9 +1,7 @@
 package com.secwsystem.ctrl.admin;
 
 import com.secwsystem.app.Admin;
-import com.secwsystem.dao.impl.AdminDAO;
 import com.secwsystem.dao.impl.LoginImpl;
-import com.secwsystem.dao.pojo.AdminPublic;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -11,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import com.secwsystem.dao.pojo.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,7 +48,6 @@ public class AdminLoginController implements Initializable {
         //这里需要数据库
         String a_id = a_login_aid.getText().trim();
         String a_password = a_login_password.getText().trim();
-        AdminPublic adminPublic = null;
         try{
             //判断账号名非空，否则执行if
             if(a_login_aid.getText().trim().isEmpty()){
@@ -64,7 +60,7 @@ public class AdminLoginController implements Initializable {
             //判断用户名是否存在，否则执行if
             if(!LoginImpl.loginAdmin(a_id,a_password)){
                 throw new Exception.LoginErrorException();
-           }
+            }
             stage.close();
             new Admin().MainApp();
         }catch(Exception.IdNullException e){

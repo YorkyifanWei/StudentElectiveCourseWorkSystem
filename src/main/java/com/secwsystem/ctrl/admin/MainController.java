@@ -146,7 +146,6 @@ public class MainController implements Initializable {
     private TableColumn<StudentPrivate, String> StuEmail;
 
     //这里需要读取个人信息到前面的TextField里
-    //TODO
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Context.controllers.put(this.getClass().getSimpleName(), this);
@@ -228,7 +227,6 @@ public class MainController implements Initializable {
     }
 
     //以下三个都分别需要提取对应的数据表
-    //TODO
     @FXML
     void CourseEvent() {
         setVisible();

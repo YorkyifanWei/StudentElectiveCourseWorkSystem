@@ -44,7 +44,6 @@ public class ChangePhonenumberController {
             }
             if(new Student().showMessage("提示","确定修改手机号？", Alert.AlertType.CONFIRMATION,1)){
                 //将新手机号上传到数据库
-                //TODO
                 StudentLoginController controller = (StudentLoginController) Context.controllers.get(StudentLoginController.class.getSimpleName());
                 StudentDAO studentDAO = new StudentDAO();
                 StudentPrivate studentPrivate = studentDAO.getPrivate(controller.getsid());

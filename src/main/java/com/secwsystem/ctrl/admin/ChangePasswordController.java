@@ -45,7 +45,6 @@ public class ChangePasswordController{
             }
             if(new Admin().showMessage("提示","确定修改密码？", Alert.AlertType.CONFIRMATION,1)){
                 //将新密码上传到数据库
-                //TODO
                 AdminLoginController controller = (AdminLoginController) Context.controllers.get(AdminLoginController.class.getSimpleName());
                 AdminDAO adminDAO = new AdminDAO();
                 AdminPrivate adminPrivate = adminDAO.getPrivate(controller.getaid());

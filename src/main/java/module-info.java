@@ -1,11 +1,11 @@
 module StudentElectiveCourseWorkSystem {
-    requires java.sql;
-    requires javafx.base;
-    requires javafx.controls;
-    requires javafx.fxml;
-    requires javafx.graphics;
-    requires org.xerial.sqlitejdbc;
-    requires java.logging;
+    requires transitive java.sql;
+    requires transitive javafx.base;
+    requires transitive javafx.controls;
+    requires transitive javafx.fxml;
+    requires transitive javafx.graphics;
+    requires transitive org.xerial.sqlitejdbc;
+    requires transitive java.logging;
 //    // 添加Jupiter依赖
 //    requires org.junit.jupiter.api;
 
