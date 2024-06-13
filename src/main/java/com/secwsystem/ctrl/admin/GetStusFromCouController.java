@@ -80,7 +80,7 @@ public class GetStusFromCouController implements Initializable {
 
     @FXML
     void AddEvent() throws IOException {
-        new Admin().AddStuInCou();
+        new Admin().addStudentIntoCourse();
     }
 
     @FXML
@@ -109,7 +109,7 @@ public class GetStusFromCouController implements Initializable {
 
     @FXML
     void GetStuFromCouEvent() throws IOException {
-        new Admin().GetStuFromCou();
+        new Admin().getStudentFromCourse();
     }
 
     StudentPrivate getStuFromCou(){

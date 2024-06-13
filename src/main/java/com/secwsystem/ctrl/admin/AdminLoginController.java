@@ -62,7 +62,7 @@ public class AdminLoginController implements Initializable {
                 throw new Exception.LoginErrorException();
             }
             stage.close();
-            new Admin().MainApp();
+            new Admin().mainApp();
         }catch(Exception.IdNullException e){
             new Admin().showMessage("登录异常","账号名不能为空!", Alert.AlertType.ERROR,0);
         }catch (Exception.PasswordNullException e){

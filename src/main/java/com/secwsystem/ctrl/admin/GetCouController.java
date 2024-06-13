@@ -72,11 +72,11 @@ public class GetCouController implements Initializable {
 
     @FXML
     void GetStusEvent() throws IOException {
-        new Admin().GetStusFromCou();
+        new Admin().getStudentsFromCourse();
     }
 
     @FXML
     void GetTeasEvent() throws IOException {
-        new Admin().GetTeasFromCou();
+        new Admin().getTeachersFromCourse();
     }
 }

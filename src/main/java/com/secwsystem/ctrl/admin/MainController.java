@@ -209,7 +209,7 @@ public class MainController implements Initializable {
 
     @FXML
     void AlterEvent() throws IOException {
-        new Admin().ChangePassword();
+        new Admin().changePassword();
     }
 
     //初始化所有子界面的可视化状态
@@ -257,13 +257,13 @@ public class MainController implements Initializable {
     @FXML
     void AddEvent() throws IOException {
         if (CouTable.isVisible()) {
-            new Admin().AddCourse();
+            new Admin().addCourse();
         }
         if (TeaTable.isVisible()) {
-            new Admin().AddTea();
+            new Admin().addTeacher();
         }
         if (StuTable.isVisible()) {
-            new Admin().AddStu();
+            new Admin().addStudent();
         }
     }
 
@@ -338,13 +338,13 @@ public class MainController implements Initializable {
     @FXML
     void ModifyEvent() throws IOException {
         if (CouTable.isVisible()) {
-            new Admin().ModifyCou();
+            new Admin().modifyCourse();
         }
         if (TeaTable.isVisible()) {
-            new Admin().ModifyTea();
+            new Admin().modifyTeacher();
         }
         if (StuTable.isVisible()) {
-            new Admin().ModifyStu();
+            new Admin().modifyStudent();
         }
     }
 
@@ -371,13 +371,13 @@ public class MainController implements Initializable {
     @FXML
     void GetEvent() throws IOException {
         if (CouTable.isVisible()){
-            new Admin().GetCou();
+            new Admin().getCourse();
         }
         if (TeaTable.isVisible()){
-            new Admin().GetTea();
+            new Admin().getTeacher();
         }
         if (StuTable.isVisible()){
-            new Admin().GetStu();
+            new Admin().getStudent();
         }
     }
 

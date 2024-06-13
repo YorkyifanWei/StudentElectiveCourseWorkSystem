@@ -86,7 +86,7 @@ public class GetTeasFromCouController implements Initializable {
 
     @FXML
     void AddEvent() throws IOException {
-        new Admin().AddTeaInCou();
+        new Admin().addTeacherIntoCourse();
     }
 
     @FXML
@@ -115,7 +115,7 @@ public class GetTeasFromCouController implements Initializable {
 
     @FXML
     void GetTeaFromCouEvent() throws IOException {
-        new Admin().GetTeaFromCou();
+        new Admin().getTeacherFromCourse();
     }
 
     TeacherPrivate getTeaFromCou(){
