@@ -60,7 +60,7 @@ public class Admin extends Application {
             primaryStage.setScene(scene);
 
             // 通过loader获取登录控制器实例
-            AdminLoginController controller = loader.getController();
+            AdminLogin controller = loader.getController();
             // 将主舞台设置给控制器，以便控制器可以操作舞台
             controller.setStage(primaryStage);
 
@@ -95,7 +95,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取控制器对象。
-        MainController controller = loader.getController();
+        AdminMainController controller = loader.getController();
         // 将创建的Stage对象设置给控制器，以便控制器可以操作窗口。
         controller.setStage(stage);
 
@@ -129,7 +129,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取添加课程控制器实例。
-        AddCouController controller = loader.getController();
+        AddCourse controller = loader.getController();
         // 设置控制器中的舞台引用，以便控制器可以操作舞台。
         controller.setStage(stage);
 
@@ -162,7 +162,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取控制器实例。
-        AddTeaController controller = loader.getController();
+        AddTeacher controller = loader.getController();
         // 设置控制器中的舞台引用，以便控制器可以操作舞台。
         controller.setStage(stage);
 
@@ -194,7 +194,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取添加学生界面的控制器实例。
-        AddStuController controller = loader.getController();
+        AddStudent controller = loader.getController();
         // 将当前stage设置给控制器，以便控制器可以操作窗口。
         controller.setStage(stage);
 
@@ -230,7 +230,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取控制器实例
-        ChangePasswordController controller = loader.getController();
+        ChangePassword controller = loader.getController();
         // 将当前舞台设置给控制器，以便控制器可以操作舞台
         controller.setStage(stage);
 
@@ -262,7 +262,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取修改课程窗口的控制器对象。
-        ModifyCouController controller = loader.getController();
+        ModifyCourse controller = loader.getController();
         // 将创建的舞台设置给控制器，以便控制器可以操作舞台。
         controller.setStage(stage);
 
@@ -294,7 +294,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取控制器对象
-        ModifyTeaController controller = loader.getController();
+        ModifyTeacher controller = loader.getController();
         // 将舞台设置到控制器中，以便控制器可以操作舞台
         controller.setStage(stage);
 
@@ -326,7 +326,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取控制器对象。
-        ModifyStuController controller = loader.getController();
+        ModifyStudent controller = loader.getController();
         // 设置控制器中的舞台引用，以便控制器可以操作舞台。
         controller.setStage(stage);
 
@@ -550,7 +550,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 获取控制器实例
-        AddTeaInCouController controller = loader.getController();
+        AddTeacherIntoCourse controller = loader.getController();
         // 设置控制器中的舞台引用，以便控制器可以操作舞台
         controller.setStage(stage);
 
@@ -580,7 +580,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取控制器实例，并设置舞台给控制器。
-        AddStuInCouController controller = loader.getController();
+        AddStudentIntoCourse controller = loader.getController();
         controller.setStage(stage);
 
         // 显示舞台，并等待用户操作。

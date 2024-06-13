@@ -37,7 +37,7 @@ public class Teacher extends Application {
             primaryStage.setTitle("教师登录界面");
             primaryStage.setScene(scene);
 
-            TeacherLoginController controller = loader.getController();
+            TeacherLogin controller = loader.getController();
             controller.setStage(primaryStage);
 
             primaryStage.show();
@@ -57,7 +57,7 @@ public class Teacher extends Application {
         regStage.setTitle("教师端主界面");
         regStage.setScene(scene);
 
-        MainController controller = loader.getController();
+        TeacherMainController controller = loader.getController();
         controller.setStage(regStage);
 
         regStage.show();
@@ -74,7 +74,7 @@ public class Teacher extends Application {
         stage.setTitle("修改密码");
         stage.setScene(scene);
 
-        ChangePasswordController controller = loader.getController();
+        ChangePassword controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -91,7 +91,7 @@ public class Teacher extends Application {
         stage.setTitle("修改手机号");
         stage.setScene(scene);
 
-        ChangePhonenumberController controller = loader.getController();
+        ChangePhoneNumber controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -108,7 +108,7 @@ public class Teacher extends Application {
         stage.setTitle("修改邮箱");
         stage.setScene(scene);
 
-        ChangeEmailController controller = loader.getController();
+        ChangeEmail controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -125,7 +125,7 @@ public class Teacher extends Application {
         stage.setTitle("修改办公室地址");
         stage.setScene(scene);
 
-        ChangeAddressController controller = loader.getController();
+        ChangeAddress controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -142,7 +142,7 @@ public class Teacher extends Application {
         regStage.setTitle("课程详情");
         regStage.setScene(scene);
 
-        AddCourseController controller = loader.getController();
+        AddCourse controller = loader.getController();
         controller.setStage(regStage);
 
         regStage.show();
