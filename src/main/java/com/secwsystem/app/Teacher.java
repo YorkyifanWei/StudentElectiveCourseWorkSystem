@@ -74,7 +74,7 @@ public class Teacher extends Application {
         stage.setTitle("修改密码");
         stage.setScene(scene);
 
-        ChangePassword controller = loader.getController();
+        TeacherChangePassword controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -91,7 +91,7 @@ public class Teacher extends Application {
         stage.setTitle("修改手机号");
         stage.setScene(scene);
 
-        ChangePhoneNumber controller = loader.getController();
+        TeacherChangePhoneNumber controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -108,7 +108,7 @@ public class Teacher extends Application {
         stage.setTitle("修改邮箱");
         stage.setScene(scene);
 
-        ChangeEmail controller = loader.getController();
+        TeacherChangeEmail controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -125,7 +125,7 @@ public class Teacher extends Application {
         stage.setTitle("修改办公室地址");
         stage.setScene(scene);
 
-        ChangeAddress controller = loader.getController();
+        TeacherChangeAddress controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -142,7 +142,7 @@ public class Teacher extends Application {
         regStage.setTitle("课程详情");
         regStage.setScene(scene);
 
-        AddCourse controller = loader.getController();
+        TeacherAddCourse controller = loader.getController();
         controller.setStage(regStage);
 
         regStage.show();

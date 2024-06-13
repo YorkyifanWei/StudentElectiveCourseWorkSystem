@@ -230,7 +230,7 @@ public class Admin extends Application {
         stage.setScene(scene);
 
         // 从loader中获取控制器实例
-        ChangePassword controller = loader.getController();
+        AdminChangePassword controller = loader.getController();
         // 将当前舞台设置给控制器，以便控制器可以操作舞台
         controller.setStage(stage);
 

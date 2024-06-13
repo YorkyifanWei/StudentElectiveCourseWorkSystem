@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ChangePassword{
+public class AdminChangePassword{
 
     public Stage getStage() {
         return stage;

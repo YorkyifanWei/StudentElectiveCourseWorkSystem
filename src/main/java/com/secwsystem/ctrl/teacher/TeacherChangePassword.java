@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ChangePhoneNumber {
+public class TeacherChangePassword {
 
     public Stage getStage() {
         return stage;
@@ -23,7 +23,7 @@ public class ChangePhoneNumber {
     private Stage stage;
 
     @FXML
-    private TextField a_new_phonenumber;
+    private TextField a_new_password;
 
     @FXML
     private Button btn_set;
@@ -39,16 +39,15 @@ public class ChangePhoneNumber {
     @FXML
     void SetEvent() {
         try{
-            if(a_new_phonenumber.getText().trim().isEmpty()){
+            if(a_new_password.getText().trim().isEmpty()){
                 throw new TeacherException.PasswordNullException();
             }
-            if(new Teacher().showMessage("提示","确定修改手机号？", Alert.AlertType.CONFIRMATION,1)){
-                //将新手机号上传到数据库
+            if(new Teacher().showMessage("提示","确定修改密码？", Alert.AlertType.CONFIRMATION,1)){
+                //将新密码上传到数据库
                 TeacherLogin controller = (TeacherLogin) TeacherContext.controllers.get(TeacherLogin.class.getSimpleName());
                 TeacherDAO teacherDAO = new TeacherDAO();
                 TeacherPrivate teacherPrivate = teacherDAO.getPrivate(controller.gettid());
-                teacherPrivate.setT_phone(a_new_phonenumber.getText());
-
+                teacherPrivate.setT_password(a_new_password.getText());
                 if(teacherDAO.updatePrivate(teacherPrivate)){
                     //生成提示界面，关闭本界面
                     new Teacher().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);
@@ -58,9 +57,9 @@ public class ChangePhoneNumber {
                 }
             }
         } catch (TeacherException.PasswordNullException e) {
-            new Teacher().showMessage("手机号修改失败","新手机号不能为空", Alert.AlertType.ERROR,0);
+            new Teacher().showMessage("密码修改失败","新密码不能为空", Alert.AlertType.ERROR,0);
         } catch (TeacherException.ChangePasswordException e) {
-            new Teacher().showMessage("手机号修改失败","数据库错误", Alert.AlertType.ERROR,0);
+            new Teacher().showMessage("密码修改失败","密码修改失败", Alert.AlertType.ERROR,0);
         }
     }
 

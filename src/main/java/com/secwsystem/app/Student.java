@@ -74,7 +74,7 @@ public class Student extends Application {
         stage.setTitle("修改密码");
         stage.setScene(scene);
 
-        ChangePassword controller = loader.getController();
+        StudentChangePassword controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -91,7 +91,7 @@ public class Student extends Application {
         stage.setTitle("修改手机号");
         stage.setScene(scene);
 
-        ChangePhoneNumber controller = loader.getController();
+        StudentChangePhoneNumber controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();
@@ -108,7 +108,7 @@ public class Student extends Application {
         stage.setTitle("修改邮箱");
         stage.setScene(scene);
 
-        ChangeEmail controller = loader.getController();
+        StudentChangeEmail controller = loader.getController();
         controller.setStage(stage);
 
         stage.showAndWait();

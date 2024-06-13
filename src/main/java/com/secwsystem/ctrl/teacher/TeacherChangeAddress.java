@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ChangeEmail {
+public class TeacherChangeAddress {
 
     public Stage getStage() {
         return stage;
@@ -23,7 +23,7 @@ public class ChangeEmail {
     private Stage stage;
 
     @FXML
-    private TextField a_new_email;
+    private TextField a_new_address;
 
     @FXML
     private Button btn_set;
@@ -39,16 +39,15 @@ public class ChangeEmail {
     @FXML
     void SetEvent() {
         try{
-            if(a_new_email.getText().trim().isEmpty()){
+            if(a_new_address.getText().trim().isEmpty()){
                 throw new TeacherException.PasswordNullException();
             }
-            if(new Teacher().showMessage("提示","确定修改邮箱？", Alert.AlertType.CONFIRMATION,1)){
+            if(new Teacher().showMessage("提示","确定修改办公室地址？", Alert.AlertType.CONFIRMATION,1)){
                 //将新密码上传到数据库
                 TeacherLogin controller = (TeacherLogin) TeacherContext.controllers.get(TeacherLogin.class.getSimpleName());
                 TeacherDAO teacherDAO = new TeacherDAO();
                 TeacherPrivate teacherPrivate = teacherDAO.getPrivate(controller.gettid());
-                teacherPrivate.setT_email(a_new_email.getText());
-
+                teacherPrivate.setT_address(a_new_address.getText());
                 if(teacherDAO.updatePrivate(teacherPrivate)){
                     //生成提示界面，关闭本界面
                     new Teacher().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);
@@ -58,9 +57,9 @@ public class ChangeEmail {
                 }
             }
         } catch (TeacherException.PasswordNullException e) {
-            new Teacher().showMessage("邮箱修改失败","新邮箱不能为空", Alert.AlertType.ERROR,0);
+            new Teacher().showMessage("地址修改失败","新地址不能为空", Alert.AlertType.ERROR,0);
         } catch (TeacherException.ChangePasswordException e) {
-            new Teacher().showMessage("邮箱修改失败","邮箱修改失败", Alert.AlertType.ERROR,0);
+            new Teacher().showMessage("地址修改失败","地址修改失败", Alert.AlertType.ERROR,0);
         }
     }
 
