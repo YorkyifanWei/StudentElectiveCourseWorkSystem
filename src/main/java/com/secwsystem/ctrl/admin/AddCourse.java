@@ -97,17 +97,17 @@ public class AddCourse {
                 throw new AdminException.CourseExistException();
             }
             course.setCid(cid.getText().trim());
-            course.setC_name(cName.getText().trim());
-            course.setC_info(cInfo.getText().trim());
-            course.setC_time(cTime.getText().trim());
-            course.setC_init(cInit.getText().trim());
-            course.setC_end(cEnd.getText().trim());
-            course.setC_location(cLocation.getText().trim());
-            course.setC_type(cType.getText().trim());
-            course.setC_school(cSchool.getText().trim());
-            course.setC_period(cPeriod.getText().trim());
-            course.setC_capacity(cCapacity.getText().trim());
-            course.setC_current("0");
+            course.setCName(cName.getText().trim());
+            course.setCInfo(cInfo.getText().trim());
+            course.setCTime(cTime.getText().trim());
+            course.setCInit(cInit.getText().trim());
+            course.setCEnd(cEnd.getText().trim());
+            course.setCLocation(cLocation.getText().trim());
+            course.setCType(cType.getText().trim());
+            course.setCSchool(cSchool.getText().trim());
+            course.setCPeriod(cPeriod.getText().trim());
+            course.setCCapacity(cCapacity.getText().trim());
+            course.setCCurrent("0");
             course.addTeacher(c_tid.getText().trim());
             course.addStudent(null);
 

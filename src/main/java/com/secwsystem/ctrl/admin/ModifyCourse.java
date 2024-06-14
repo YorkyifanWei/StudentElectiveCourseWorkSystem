@@ -71,16 +71,16 @@ public class ModifyCourse implements Initializable {
         AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
         Course course = controller.getCourse();
         CouId.setText(course.getCid());
-        CouName.setText(course.getC_name());
-        CouType.setText(course.getC_type());
-        CouInfo.setText(course.getC_info());
-        CouTime.setText(course.getC_time());
-        CouSchool.setText(course.getC_school());
-        CouPeriod.setText(course.getC_period());
-        CouCapacity.setText(course.getC_capacity());
-        CouInit.setText(course.getC_init());
-        CouEnd.setText(course.getC_end());
-        CouLocation.setText(course.getC_location());
+        CouName.setText(course.getCName());
+        CouType.setText(course.getCType());
+        CouInfo.setText(course.getCInfo());
+        CouTime.setText(course.getCTime());
+        CouSchool.setText(course.getCSchool());
+        CouPeriod.setText(course.getCPeriod());
+        CouCapacity.setText(course.getCCapacity());
+        CouInit.setText(course.getCInti());
+        CouEnd.setText(course.getCEnd());
+        CouLocation.setText(course.getCLocation());
     }
 
     @FXML
@@ -98,16 +98,16 @@ public class ModifyCourse implements Initializable {
                 throw new AdminException.TextFieldNullException();
             }
             course.setCid(CouId.getText().trim());
-            course.setC_name(CouName.getText().trim());
-            course.setC_type(CouType.getText().trim());
-            course.setC_info(CouInfo.getText().trim());
-            course.setC_time(CouTime.getText().trim());
-            course.setC_school(CouSchool.getText().trim());
-            course.setC_period(CouPeriod.getText().trim());
-            course.setC_capacity(CouCapacity.getText().trim());
-            course.setC_init(CouInit.getText().trim());
-            course.setC_end(CouEnd.getText().trim());
-            course.setC_location(CouLocation.getText().trim());
+            course.setCName(CouName.getText().trim());
+            course.setCType(CouType.getText().trim());
+            course.setCInfo(CouInfo.getText().trim());
+            course.setCTime(CouTime.getText().trim());
+            course.setCSchool(CouSchool.getText().trim());
+            course.setCPeriod(CouPeriod.getText().trim());
+            course.setCCapacity(CouCapacity.getText().trim());
+            course.setCInit(CouInit.getText().trim());
+            course.setCEnd(CouEnd.getText().trim());
+            course.setCLocation(CouLocation.getText().trim());
 
             if(courseDAO.updateCourse(course)){
                 controller.ModifyCourseToTable(course);

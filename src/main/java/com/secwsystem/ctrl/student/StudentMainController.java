@@ -236,17 +236,17 @@ public class StudentMainController implements Initializable {
         StudentLogin controller = (StudentLogin) StudentContext.controllers.get(StudentLogin.class.getSimpleName());
         String sid = controller.getsid();
         a_main_sid.setText(sid);
-        a_main_name.setText(studentDAO.getPublic(sid).getS_name());
-        a_main_classandcollege.setText(studentDAO.getPublic(sid).getS_school()+studentDAO.getPublic(sid).getS_class());
-        a_main_sex.setText(studentDAO.getPublic(sid).getS_sex());
-        a_main_phonenumber.setText(studentDAO.getPublic(sid).getS_phone());
-        a_main_email.setText(studentDAO.getPublic(sid).getS_email());
-        a_main_idcard.setText(studentDAO.getPrivate(sid).getS_idcard());
+        a_main_name.setText(studentDAO.getPublic(sid).getSName());
+        a_main_classandcollege.setText(studentDAO.getPublic(sid).getSSchool()+studentDAO.getPublic(sid).getSClass());
+        a_main_sex.setText(studentDAO.getPublic(sid).getSSex());
+        a_main_phonenumber.setText(studentDAO.getPublic(sid).getSPhoneNumber());
+        a_main_email.setText(studentDAO.getPublic(sid).getSEmail());
+        a_main_idcard.setText(studentDAO.getPrivate(sid).getSIdcard());
 
 
 //以下是查询所有课程
         CourseDAO courseDAO = new CourseDAO();
-        ArrayList<Course> all_list1 = courseDAO.getAllCourses();
+        ArrayList<Course> all_list1 = courseDAO.getAll();
         ObservableList<Course> all_list2 = FXCollections.observableArrayList();
         all_list2.addAll(all_list1);
         tableview1.setItems(all_list2);

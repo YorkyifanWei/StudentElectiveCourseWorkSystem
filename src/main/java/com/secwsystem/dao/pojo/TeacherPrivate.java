@@ -3,118 +3,74 @@ package com.secwsystem.dao.pojo;
 public class TeacherPrivate {
     private long id;// 主键
     private String tid;// 职工号
-    private String t_name;// 姓名
-    private String t_title;// 职称
-    private String t_school;// 学院
-    private String t_sex;// 性别
-    private String t_phone;// 电话
-    private String t_email;// 邮箱
-    private String t_idcard;// 身份证
-    private String t_address;// 办公室
-    private String t_password;// 密码
+    private String tName;// 姓名
+    private String tTile;// 职称
+    private String tSchool;// 学院
+    private String tSex;// 性别
+    private String tPhoneNumber;// 电话
+    private String tEmail;// 邮箱
+    private String tIdcard;// 身份证
+    private String tAddress;// 办公室
+    private String tPassword;// 密码
 
     public TeacherPrivate() {
     }
 
-    public TeacherPrivate(long id, String tid, String t_name, String t_title, String t_school, String t_sex, String t_phone, String t_email, String t_idcard, String t_address, String t_password) {
+    public TeacherPrivate(long id, String tid, String tName, String tTitle, String tSchool, String tSex, String tPhoneNumber, String tEmail, String tIdcard, String tAddress, String tPassword) {
         this.id = id;
         this.tid = tid;
-        this.t_name = t_name;
-        this.t_title = t_title;
-        this.t_school = t_school;
-        this.t_sex = t_sex;
-        this.t_phone = t_phone;
-        this.t_email = t_email;
-        this.t_idcard = t_idcard;
-        this.t_address = t_address;
-        this.t_password = t_password;
+        this.tName = tName;
+        this.tTile = tTitle;
+        this.tSchool = tSchool;
+        this.tSex = tSex;
+        this.tPhoneNumber = tPhoneNumber;
+        this.tEmail = tEmail;
+        this.tIdcard = tIdcard;
+        this.tAddress = tAddress;
+        this.tPassword = tPassword;
     }
 
-    public long getId() {
-        return id;
-    }
+    public long getId() { return id; }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    public void setId(long id) { this.id = id; }
 
-    public String getTid() {
-        return tid;
-    }
+    public String getTid() { return tid; }
 
-    public void setTid(String tid) {
-        this.tid = tid;
-    }
+    public void setTid(String tid) { this.tid = tid; }
 
-    public String getT_name() {
-        return t_name;
-    }
+    public String getTName() { return tName; }
 
-    public void setT_name(String t_name) {
-        this.t_name = t_name;
-    }
+    public void setTName(String tName) { this.tName = tName; }
 
-    public String getT_title() {
-        return t_title;
-    }
+    public String getTTitle() { return tTile; }
 
-    public void setT_title(String t_title) {
-        this.t_title = t_title;
-    }
+    public void setTTitle(String tTitle) { this.tTile = tTitle; }
 
-    public String getT_school() {
-        return t_school;
-    }
+    public String getTSchool() { return tSchool; }
 
-    public void setT_school(String t_school) {
-        this.t_school = t_school;
-    }
+    public void setTSchool(String tSchool) { this.tSchool = tSchool; }
 
-    public String getT_sex() {
-        return t_sex;
-    }
+    public String getTSex() { return tSex; }
 
-    public void setT_sex(String t_sex) {
-        this.t_sex = t_sex;
-    }
+    public void setTSex(String tSex) { this.tSex = tSex; }
 
-    public String getT_phone() {
-        return t_phone;
-    }
+    public String getTPhoneNumber() { return tPhoneNumber; }
 
-    public void setT_phone(String t_phone) {
-        this.t_phone = t_phone;
-    }
+    public void setTPhoneNumber(String tPhone) { this.tPhoneNumber = tPhone; }
 
-    public String getT_email() {
-        return t_email;
-    }
+    public String getTEmail() { return tEmail; }
 
-    public void setT_email(String t_email) {
-        this.t_email = t_email;
-    }
+    public void setTEmail(String tEmail) { this.tEmail = tEmail; }
 
-    public String getT_idcard() {
-        return t_idcard;
-    }
+    public String getTIdcard() { return tIdcard; }
 
-    public void setT_idcard(String t_idcard) {
-        this.t_idcard = t_idcard;
-    }
+    public void setTIdcard(String tIdcard) { this.tIdcard = tIdcard; }
 
-    public String getT_address() {
-        return t_address;
-    }
+    public String getTAddress() { return tAddress; }
 
-    public void setT_address(String t_address) {
-        this.t_address = t_address;
-    }
+    public void setTAddress(String tAddress) { this.tAddress = tAddress; }
 
-    public String getT_password() {
-        return t_password;
-    }
+    public String getTPassword() { return tPassword; }
 
-    public void setT_password(String t_password) {
-        this.t_password = t_password;
-    }
+    public void setTPassword(String tPassword) { this.tPassword = tPassword; }
 }

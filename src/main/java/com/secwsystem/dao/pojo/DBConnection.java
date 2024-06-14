@@ -14,11 +14,11 @@ import java.util.Properties;
  */
 public class DBConnection {
     // 数据库连接URL
-    private static String url = null;
+    private static String databaseURL = null;
     // 数据库用户名
-    private static String user = null;
+    private static String userName = null;
     // 数据库密码
-    private static String pwd = null;
+    private static String password = null;
     /*
       静态代码块用于初始化数据库连接配置。
       本块在类加载时执行，从资源文件"application.properties"中加载数据库连接的URL、用户名和密码。
@@ -34,11 +34,11 @@ public class DBConnection {
             // 加载配置文件内容
             props.load(input);
             // 从属性文件中获取数据库连接URL、用户名和密码
-            url = props.getProperty("db.url");
-            user = props.getProperty("db.name");
-            pwd = props.getProperty("db.password");
-            if (pwd.isEmpty()) {
-                pwd = null;
+            databaseURL = props.getProperty("db.url");
+            userName = props.getProperty("db.name");
+            password = props.getProperty("db.password");
+            if (password.isEmpty()) {
+                password = null;
             }
         } catch (IOException e) {
             // 如果在读取配置文件时发生IO异常，则抛出运行时异常
@@ -51,11 +51,11 @@ public class DBConnection {
     // 表名常量：课程信息表
     public static final String course = "course_info";
     // 表名常量：学生选课信息表
-    public static final String student_course = "student_course";
+    public static final String studentCourse = "student_course";
     // 表名常量：学生信息表
     public static final String student = "student_info";
     // 表名常量：教师授课信息表
-    public static final String teacher_course = "teacher_course";
+    public static final String teacherCourse = "teacher_course";
     // 表名常量：教师信息表
     public static final String teacher = "teacher_info";
 
@@ -68,7 +68,7 @@ public class DBConnection {
         Connection conn = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection(url, user, pwd);
+            conn = DriverManager.getConnection(databaseURL, userName, password);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -83,7 +83,7 @@ public class DBConnection {
      * @param ps 预编译的SQL语句对象
      * @param rs 结果集对象
      */
-    public static void close(Connection conn, PreparedStatement ps, ResultSet rs) {
+    public static void closeConn(Connection conn, PreparedStatement ps, ResultSet rs) {
         try {
             if (rs != null) {
                 rs.close();

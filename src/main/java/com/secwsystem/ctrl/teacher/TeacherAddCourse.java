@@ -85,17 +85,17 @@ public class TeacherAddCourse {
                 throw new TeacherException.CourseExistException();
             }
             course.setCid(CouId.getText().trim());
-            course.setC_name(CouName.getText().trim());
-            course.setC_info(CouInfo.getText().trim());
-            course.setC_time(CouTime.getText().trim());
-            course.setC_init(CouInit.getText().trim());
-            course.setC_end(CouEnd.getText().trim());
-            course.setC_location(CouLocation.getText().trim());
-            course.setC_type(CouType.getText().trim());
-            course.setC_school(CouSchool.getText().trim());
-            course.setC_period(CouPeriod.getText().trim());
-            course.setC_capacity(CouCapacity.getText().trim());
-            course.setC_current("0");
+            course.setCName(CouName.getText().trim());
+            course.setCInfo(CouInfo.getText().trim());
+            course.setCTime(CouTime.getText().trim());
+            course.setCInit(CouInit.getText().trim());
+            course.setCEnd(CouEnd.getText().trim());
+            course.setCLocation(CouLocation.getText().trim());
+            course.setCType(CouType.getText().trim());
+            course.setCSchool(CouSchool.getText().trim());
+            course.setCPeriod(CouPeriod.getText().trim());
+            course.setCCapacity(CouCapacity.getText().trim());
+            course.setCCurrent("0");
             course.addStudent(null);
             new Teacher().showMessage("提示","课程创建成功！", Alert.AlertType.INFORMATION,0);
             stage.close();

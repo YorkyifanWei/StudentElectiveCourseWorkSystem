@@ -47,7 +47,7 @@ public class TeacherChangePassword {
                 TeacherLogin controller = (TeacherLogin) TeacherContext.controllers.get(TeacherLogin.class.getSimpleName());
                 TeacherDAO teacherDAO = new TeacherDAO();
                 TeacherPrivate teacherPrivate = teacherDAO.getPrivate(controller.gettid());
-                teacherPrivate.setT_password(a_new_password.getText());
+                teacherPrivate.setTPassword(a_new_password.getText());
                 if(teacherDAO.updatePrivate(teacherPrivate)){
                     //生成提示界面，关闭本界面
                     new Teacher().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);

@@ -44,15 +44,15 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
                 // 从结果集中提取教师信息，并设置到TeacherPrivate对象中
                 teacher.setId(rs.getLong("id"));
                 teacher.setTid(rs.getString("tid"));
-                teacher.setT_name(rs.getString("t_name"));
-                teacher.setT_title(rs.getString("t_title"));
-                teacher.setT_school(rs.getString("t_school"));
-                teacher.setT_sex(rs.getString("t_sex"));
-                teacher.setT_phone(rs.getString("t_phone"));
-                teacher.setT_email(rs.getString("t_email"));
-                teacher.setT_idcard(rs.getString("t_idcard"));
-                teacher.setT_address(rs.getString("t_address"));
-                teacher.setT_password(rs.getString("t_password"));
+                teacher.setTName(rs.getString("t_name"));
+                teacher.setTTitle(rs.getString("t_title"));
+                teacher.setTSchool(rs.getString("t_school"));
+                teacher.setTSex(rs.getString("t_sex"));
+                teacher.setTPhoneNumber(rs.getString("t_phone"));
+                teacher.setTEmail(rs.getString("t_email"));
+                teacher.setTIdcard(rs.getString("t_idcard"));
+                teacher.setTAddress(rs.getString("t_address"));
+                teacher.setTPassword(rs.getString("t_password"));
                 teachers.add(teacher);
             }
         } catch (SQLException e) {
@@ -60,7 +60,7 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和相关资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         return teachers;
     }
@@ -89,15 +89,15 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句中的参数值，对应教师私有信息的各种属性
             stmt.setString(1, teacher.getTid());
-            stmt.setString(2, teacher.getT_name());
-            stmt.setString(3, teacher.getT_title());
-            stmt.setString(4, teacher.getT_school());
-            stmt.setString(5, teacher.getT_sex());
-            stmt.setString(6, teacher.getT_phone());
-            stmt.setString(7, teacher.getT_email());
-            stmt.setString(8, teacher.getT_idcard());
-            stmt.setString(9, teacher.getT_address());
-            stmt.setString(10, teacher.getT_password());
+            stmt.setString(2, teacher.getTName());
+            stmt.setString(3, teacher.getTTitle());
+            stmt.setString(4, teacher.getTSchool());
+            stmt.setString(5, teacher.getTSex());
+            stmt.setString(6, teacher.getTPhoneNumber());
+            stmt.setString(7, teacher.getTEmail());
+            stmt.setString(8, teacher.getTIdcard());
+            stmt.setString(9, teacher.getTAddress());
+            stmt.setString(10, teacher.getTPassword());
             // 执行插入操作
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -105,7 +105,7 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement，释放资源
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行插入操作没有遇到异常，返回true表示添加成功
         return true;
@@ -133,7 +133,7 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
         }
         try {
             // 构造删除课程信息的SQL语句，其中tid为教师ID
-            String sql = "DELETE FROM " + DBConnection.teacher_course + " WHERE tid = ?";
+            String sql = "DELETE FROM " + DBConnection.teacherCourse + " WHERE tid = ?";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, tid);
             stmt.executeUpdate();
@@ -147,7 +147,7 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 无论操作成功还是失败，都尝试关闭数据库连接和PreparedStatement
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行到此处，表示删除操作已完成，返回true
         return true;
@@ -175,13 +175,13 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
                     " SET t_name = ?, t_title = ?, t_school = ?, t_sex = ?, t_phone = ?, t_email = ?, t_address = ? WHERE tid = ?";
             // 准备执行SQL语句，设置参数
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, teacher.getT_name());
-            stmt.setString(2, teacher.getT_title());
-            stmt.setString(3, teacher.getT_school());
-            stmt.setString(4, teacher.getT_sex());
-            stmt.setString(5, teacher.getT_phone());
-            stmt.setString(6, teacher.getT_email());
-            stmt.setString(7, teacher.getT_address());
+            stmt.setString(1, teacher.getTName());
+            stmt.setString(2, teacher.getTTitle());
+            stmt.setString(3, teacher.getTSchool());
+            stmt.setString(4, teacher.getTSex());
+            stmt.setString(5, teacher.getTPhoneNumber());
+            stmt.setString(6, teacher.getTEmail());
+            stmt.setString(7, teacher.getTAddress());
             stmt.setString(8, teacher.getTid());
             // 执行更新操作
             stmt.executeUpdate();
@@ -190,7 +190,7 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行更新没有遇到错误，返回true表示更新成功
         return true;
@@ -218,15 +218,15 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
                     " SET t_name = ?, t_title = ?, t_school = ?, t_sex = ?, t_phone = ?, t_email = ?, t_idcard = ?, t_address = ?, t_password = ? WHERE tid = ?";
             // 准备执行SQL语句，设置参数
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, teacher.getT_name());
-            stmt.setString(2, teacher.getT_title());
-            stmt.setString(3, teacher.getT_school());
-            stmt.setString(4, teacher.getT_sex());
-            stmt.setString(5, teacher.getT_phone());
-            stmt.setString(6, teacher.getT_email());
-            stmt.setString(7, teacher.getT_idcard());
-            stmt.setString(8, teacher.getT_address());
-            stmt.setString(9, teacher.getT_password());
+            stmt.setString(1, teacher.getTName());
+            stmt.setString(2, teacher.getTTitle());
+            stmt.setString(3, teacher.getTSchool());
+            stmt.setString(4, teacher.getTSex());
+            stmt.setString(5, teacher.getTPhoneNumber());
+            stmt.setString(6, teacher.getTEmail());
+            stmt.setString(7, teacher.getTIdcard());
+            stmt.setString(8, teacher.getTAddress());
+            stmt.setString(9, teacher.getTPassword());
             stmt.setString(10, teacher.getTid());
             // 执行更新操作
             stmt.executeUpdate();
@@ -235,7 +235,7 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果更新成功，返回true
         return true;
@@ -277,7 +277,7 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接及相关资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         return teacher;
     }
@@ -325,7 +325,7 @@ public class TeacherDAO implements DAOForAccount<TeacherPublic, TeacherPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 无论是否出现异常，都关闭数据库连接和相关资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         // 返回查询结果，可能为null
         return teacher;

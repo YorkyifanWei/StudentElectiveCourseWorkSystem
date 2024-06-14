@@ -47,7 +47,7 @@ public class StudentChangePhoneNumber {
                 StudentLogin controller = (StudentLogin) StudentContext.controllers.get(StudentLogin.class.getSimpleName());
                 StudentDAO studentDAO = new StudentDAO();
                 StudentPrivate studentPrivate = studentDAO.getPrivate(controller.getsid());
-                studentPrivate.setS_phone(a_new_phonenumber.getText());
+                studentPrivate.setSPhoneNumber(a_new_phonenumber.getText());
                 if(studentDAO.updatePrivate(studentPrivate)){
                     //生成提示界面，关闭本界面
                     new Student().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public interface DAOForCourse {
 
     // 获取所有课程
-    ArrayList<Course> getAllCourses();
+    ArrayList<Course> getAll();
 
     /**
      * 添加课程。

@@ -78,15 +78,15 @@ public class AddTeacher {
                 throw new AdminException.TeacherExistException();
             }
             teacher.setTid(TeaId.getText().trim());
-            teacher.setT_name(TeaName.getText().trim());
-            teacher.setT_sex(TeaSex.getText().trim());
-            teacher.setT_school(TeaSchool.getText().trim());
-            teacher.setT_idcard(TeaIdcard.getText().trim());
-            teacher.setT_phone(TeaPhone.getText().trim());
-            teacher.setT_email(TeaEmail.getText().trim());
-            teacher.setT_address(TeaAddress.getText().trim());
-            teacher.setT_password(TeaPassword.getText().trim());
-            teacher.setT_title(TeaTitle.getText().trim());
+            teacher.setTName(TeaName.getText().trim());
+            teacher.setTSex(TeaSex.getText().trim());
+            teacher.setTSchool(TeaSchool.getText().trim());
+            teacher.setTIdcard(TeaIdcard.getText().trim());
+            teacher.setTPhoneNumber(TeaPhone.getText().trim());
+            teacher.setTEmail(TeaEmail.getText().trim());
+            teacher.setTAddress(TeaAddress.getText().trim());
+            teacher.setTPassword(TeaPassword.getText().trim());
+            teacher.setTTitle(TeaTitle.getText().trim());
             if(teacherDAO.add(teacher)){
                 AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
                 controller.AddTeaToTable(teacher);

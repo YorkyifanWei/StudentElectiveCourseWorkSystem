@@ -68,14 +68,14 @@ public class ModifyTeacher implements Initializable{
         AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
         TeacherPrivate teacher = controller.getTeacher();
         TeaId.setText(teacher.getTid());
-        TeaName.setText(teacher.getT_name());
-        TeaSex.setText(teacher.getT_sex());
-        TeaIdcard.setText(teacher.getT_idcard());
-        TeaPhone.setText(teacher.getT_phone());
-        TeaSchool.setText(teacher.getT_school());
-        TeaTitle.setText(teacher.getT_title());
-        TeaEmail.setText(teacher.getT_email());
-        TeaAddress.setText(teacher.getT_address());
+        TeaName.setText(teacher.getTName());
+        TeaSex.setText(teacher.getTSex());
+        TeaIdcard.setText(teacher.getTIdcard());
+        TeaPhone.setText(teacher.getTPhoneNumber());
+        TeaSchool.setText(teacher.getTSchool());
+        TeaTitle.setText(teacher.getTTitle());
+        TeaEmail.setText(teacher.getTEmail());
+        TeaAddress.setText(teacher.getTAddress());
     }
     @FXML
     void CancelEvent() {
@@ -92,14 +92,14 @@ public class ModifyTeacher implements Initializable{
                 throw new AdminException.TextFieldNullException();
             }
             teacher.setTid(TeaId.getText().trim());
-            teacher.setT_name(TeaName.getText().trim());
-            teacher.setT_sex(TeaSex.getText().trim());
-            teacher.setT_idcard(TeaIdcard.getText().trim());
-            teacher.setT_phone(TeaPhone.getText().trim());
-            teacher.setT_school(TeaSchool.getText().trim());
-            teacher.setT_title(TeaTitle.getText().trim());
-            teacher.setT_email(TeaEmail.getText().trim());
-            teacher.setT_address(TeaAddress.getText().trim());
+            teacher.setTName(TeaName.getText().trim());
+            teacher.setTSex(TeaSex.getText().trim());
+            teacher.setTIdcard(TeaIdcard.getText().trim());
+            teacher.setTPhoneNumber(TeaPhone.getText().trim());
+            teacher.setTSchool(TeaSchool.getText().trim());
+            teacher.setTTitle(TeaTitle.getText().trim());
+            teacher.setTEmail(TeaEmail.getText().trim());
+            teacher.setTAddress(TeaAddress.getText().trim());
             if(teacherDAO.updatePrivate(teacher)){
                 controller.ModifyTeaToTable(teacher);
                 new Admin().showMessage("修改成功", "修改成功", Alert.AlertType.INFORMATION, 0);

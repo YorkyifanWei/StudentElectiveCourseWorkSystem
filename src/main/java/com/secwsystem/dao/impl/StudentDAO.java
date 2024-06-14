@@ -43,15 +43,15 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
                 StudentPrivate student = new StudentPrivate();
                 student.setId(rs.getLong("id"));
                 student.setSid(rs.getString("sid"));
-                student.setS_name(rs.getString("s_name"));
-                student.setS_class(rs.getString("s_class"));
-                student.setS_school(rs.getString("s_school"));
-                student.setS_sex(rs.getString("s_sex"));
-                student.setS_phone(rs.getString("s_phone"));
-                student.setS_email(rs.getString("s_email"));
-                student.setS_idcard(rs.getString("s_idcard"));
-                student.setS_password(rs.getString("s_password"));
-                student.setS_entertime(rs.getString("s_entertime"));
+                student.setSName(rs.getString("s_name"));
+                student.setSClass(rs.getString("s_class"));
+                student.setSSchool(rs.getString("s_school"));
+                student.setSSex(rs.getString("s_sex"));
+                student.setSPhoneNumber(rs.getString("s_phone"));
+                student.setSEmail(rs.getString("s_email"));
+                student.setSIdcard(rs.getString("s_idcard"));
+                student.setSPassword(rs.getString("s_password"));
+                student.setSEntertime(rs.getString("s_entertime"));
                 students.add(student);
             }
         } catch (SQLException e) {
@@ -59,7 +59,7 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接、PreparedStatement和ResultSet对象
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         // 返回所有学生私有信息的列表
         return students;
@@ -90,15 +90,15 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             stmt = conn.prepareStatement(sql);
             // 设置预处理语句的参数，依次对应学生对象的各个属性
             stmt.setString(1, student.getSid());
-            stmt.setString(2, student.getS_name());
-            stmt.setString(3, student.getS_class());
-            stmt.setString(4, student.getS_school());
-            stmt.setString(5, student.getS_sex());
-            stmt.setString(6, student.getS_phone());
-            stmt.setString(7, student.getS_email());
-            stmt.setString(8, student.getS_idcard());
-            stmt.setString(9, student.getS_password());
-            stmt.setString(10, student.getS_entertime());
+            stmt.setString(2, student.getSName());
+            stmt.setString(3, student.getSClass());
+            stmt.setString(4, student.getSSchool());
+            stmt.setString(5, student.getSSex());
+            stmt.setString(6, student.getSPhoneNumber());
+            stmt.setString(7, student.getSEmail());
+            stmt.setString(8, student.getSIdcard());
+            stmt.setString(9, student.getSPassword());
+            stmt.setString(10, student.getSEntertime());
             // 执行插入操作
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -106,7 +106,7 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行到此处，说明插入操作成功，返回true
         return true;
@@ -132,7 +132,7 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
         }
         try {
             // 构造删除学生课程信息的SQL语句
-            String sql = "delete from " + DBConnection.student_course + " where sid = ?";
+            String sql = "delete from " + DBConnection.studentCourse + " where sid = ?";
             // 准备SQL语句并设置参数
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, sid);
@@ -151,7 +151,7 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 返回删除操作成功标志
         return true;
@@ -181,12 +181,12 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             stmt = conn.prepareStatement(sql);
 
             // 设置预处理语句的参数，对应SQL语句中的问号
-            stmt.setString(1, student.getS_name());
-            stmt.setString(2, student.getS_class());
-            stmt.setString(3, student.getS_school());
-            stmt.setString(4, student.getS_sex());
-            stmt.setString(5, student.getS_phone());
-            stmt.setString(6, student.getS_email());
+            stmt.setString(1, student.getSName());
+            stmt.setString(2, student.getSClass());
+            stmt.setString(3, student.getSSchool());
+            stmt.setString(4, student.getSSex());
+            stmt.setString(5, student.getSPhoneNumber());
+            stmt.setString(6, student.getSEmail());
             stmt.setString(7, student.getSid());
 
             // 执行更新操作
@@ -196,7 +196,7 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement对象
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行更新操作没有遇到错误，返回true表示更新成功
         return true;
@@ -224,15 +224,15 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
                     " set s_name = ?, s_class = ?, s_school = ?, s_sex = ?, s_phone = ?, s_email = ?, s_idcard = ?, s_password = ?, s_entertime = ? where sid = ?";
             // 创建预编译的SQL语句对象，并设置参数
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, student.getS_name());
-            stmt.setString(2, student.getS_class());
-            stmt.setString(3, student.getS_school());
-            stmt.setString(4, student.getS_sex());
-            stmt.setString(5, student.getS_phone());
-            stmt.setString(6, student.getS_email());
-            stmt.setString(7, student.getS_idcard());
-            stmt.setString(8, student.getS_password());
-            stmt.setString(9, student.getS_entertime());
+            stmt.setString(1, student.getSName());
+            stmt.setString(2, student.getSClass());
+            stmt.setString(3, student.getSSchool());
+            stmt.setString(4, student.getSSex());
+            stmt.setString(5, student.getSPhoneNumber());
+            stmt.setString(6, student.getSEmail());
+            stmt.setString(7, student.getSIdcard());
+            stmt.setString(8, student.getSPassword());
+            stmt.setString(9, student.getSEntertime());
             stmt.setString(10, student.getSid());
             // 执行更新操作
             stmt.executeUpdate();
@@ -241,7 +241,7 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement对象
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 更新成功，返回true
         return true;
@@ -287,7 +287,7 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 无论是否出现异常，都关闭数据库连接、预处理语句和结果集
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         // 返回查询结果，如果未查询到学生信息，则返回null
         return student;
@@ -335,7 +335,7 @@ public class StudentDAO implements DAOForAccount<StudentPublic, StudentPrivate> 
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接、PreparedStatement和ResultSet对象
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         // 返回查询结果，如果未找到则返回null
         return student;

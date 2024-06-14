@@ -48,7 +48,7 @@ public class AdminChangePassword{
                 AdminLogin controller = (AdminLogin) AdminContext.controllers.get(AdminLogin.class.getSimpleName());
                 AdminDAO adminDAO = new AdminDAO();
                 AdminPrivate adminPrivate = adminDAO.getPrivate(controller.getaid());
-                adminPrivate.setA_password(a_new_password.getText());
+                adminPrivate.setAPassword(a_new_password.getText());
                 if(adminDAO.updatePrivate(adminPrivate)){
                     //生成提示界面，关闭本界面
                     new Admin().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);

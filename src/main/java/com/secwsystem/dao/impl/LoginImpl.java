@@ -55,7 +55,7 @@ public class LoginImpl implements Login {
             throw new RuntimeException(e);
         }
         finally {
-            DBConnection.close(conn,pstmt,rs);
+            DBConnection.closeConn(conn,pstmt,rs);
         }
         return result;
     }

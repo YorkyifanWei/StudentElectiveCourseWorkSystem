@@ -47,7 +47,7 @@ public class TeacherChangeEmail {
                 TeacherLogin controller = (TeacherLogin) TeacherContext.controllers.get(TeacherLogin.class.getSimpleName());
                 TeacherDAO teacherDAO = new TeacherDAO();
                 TeacherPrivate teacherPrivate = teacherDAO.getPrivate(controller.gettid());
-                teacherPrivate.setT_email(a_new_email.getText());
+                teacherPrivate.setTEmail(a_new_email.getText());
 
                 if(teacherDAO.updatePrivate(teacherPrivate)){
                     //生成提示界面，关闭本界面

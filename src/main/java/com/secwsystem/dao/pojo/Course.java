@@ -8,17 +8,17 @@ import java.util.ArrayList;
 public class Course {
     private String id;// 主键
     private String cid;// 课程号
-    private String c_name;// 课程名
-    private String c_info;// 简介
-    private String c_time;// 上课时间
-    private String c_init;// 开始时间
-    private String c_end;// 结束时间
-    private String c_location;// 上课教室
-    private String c_type;// 课程类型
-    private String c_school;// 课程所属学院
-    private String c_period;// 课程学时
-    private String c_capacity;// 课程容量
-    private String c_current;// 已选人数
+    private String cName;// 课程名
+    private String cInfo;// 简介
+    private String cTime;// 上课时间
+    private String cInit;// 开始时间
+    private String cEnd;// 结束时间
+    private String cLocation;// 上课教室
+    private String cType;// 课程类型
+    private String cSchool;// 课程所属学院
+    private String cPeriod;// 课程学时
+    private String cCapacity;// 课程容量
+    private String cCurrent;// 已选人数
 
     // 课程对应的老师和学生列表
     private ArrayList<IdName> teachers;
@@ -27,23 +27,23 @@ public class Course {
     public Course() {
     }
 
-    public Course(String id, String cid, String c_name, String c_info,
-                  String c_time, String c_init, String c_end, String c_location,
-                  String c_type, String c_school, String c_period, String c_capacity,
-                  String c_current, ArrayList<IdName> teachers, ArrayList<IdName> students) {
+    public Course(String id, String cid, String cName, String cInfo,
+                  String cTime, String cInit, String cEnd, String cLocation,
+                  String cType, String cSchool, String cPeriod, String cCapacity,
+                  String cCurrent, ArrayList<IdName> teachers, ArrayList<IdName> students) {
         this.id = id;
         this.cid = cid;
-        this.c_name = c_name;
-        this.c_info = c_info;
-        this.c_time = c_time;
-        this.c_init = c_init;
-        this.c_end = c_end;
-        this.c_location = c_location;
-        this.c_type = c_type;
-        this.c_school = c_school;
-        this.c_period = c_period;
-        this.c_capacity = c_capacity;
-        this.c_current = c_current;
+        this.cName = cName;
+        this.cInfo = cInfo;
+        this.cTime = cTime;
+        this.cInit = cInit;
+        this.cEnd = cEnd;
+        this.cLocation = cLocation;
+        this.cType = cType;
+        this.cSchool = cSchool;
+        this.cPeriod = cPeriod;
+        this.cCapacity = cCapacity;
+        this.cCurrent = cCurrent;
         this.teachers = teachers;
         this.students = students;
     }
@@ -58,7 +58,7 @@ public class Course {
         if (teacher == null) {
             return false;
         }
-        teachers.add(new IdName(tid, teacher.getT_name()));
+        teachers.add(new IdName(tid, teacher.getTName()));
         return true;
     }
 
@@ -69,13 +69,13 @@ public class Course {
             if (teacher == null) {
                 return false;
             }
-            teachers.remove(new IdName(tid, teacher.getT_name()));
+            teachers.remove(new IdName(tid, teacher.getTName()));
         }
         return true;
     }
 
     public boolean addStudent(String sid) {
-        if (c_current.equals(c_capacity)) {
+        if (cCurrent.equals(cCapacity)) {
             return false;
         }
         if (students == null) {
@@ -86,8 +86,8 @@ public class Course {
         if (student == null) {
             return false;
         }
-        students.add(new IdName(sid, student.getS_name()));
-        c_current = String.valueOf(students.size());
+        students.add(new IdName(sid, student.getSName()));
+        cCurrent = String.valueOf(students.size());
         return true;
     }
 
@@ -98,12 +98,12 @@ public class Course {
             if (student == null) {
                 return false;
             }
-            students.remove(new IdName(sid, student.getS_name()));
+            students.remove(new IdName(sid, student.getSName()));
         } else {
-            c_current = "0";
+            cCurrent = "0";
             return false;
         }
-        c_current = String.valueOf(students.size());
+        cCurrent = String.valueOf(students.size());
         return true;
     }
 
@@ -116,49 +116,49 @@ public class Course {
 
     public void setCid(String cid) { this.cid = cid; }
 
-    public String getC_name() { return c_name; }
+    public String getCName() { return cName; }
 
-    public void setC_name(String c_name) { this.c_name = c_name; }
+    public void setCName(String cName) { this.cName = cName; }
 
-    public String getC_info() { return c_info; }
+    public String getCInfo() { return cInfo; }
 
-    public void setC_info(String c_info) { this.c_info = c_info; }
+    public void setCInfo(String cInfo) { this.cInfo = cInfo; }
 
-    public String getC_time() { return c_time; }
+    public String getCTime() { return cTime; }
 
-    public void setC_time(String c_time) { this.c_time = c_time; }
+    public void setCTime(String cTime) { this.cTime = cTime; }
 
-    public String getC_init() { return c_init; }
+    public String getCInti() { return cInit; }
 
-    public void setC_init(String c_init) { this.c_init = c_init; }
+    public void setCInit(String cInit) { this.cInit = cInit; }
 
-    public String getC_end() { return c_end; }
+    public String getCEnd() { return cEnd; }
 
-    public void setC_end(String c_end) { this.c_end = c_end; }
+    public void setCEnd(String cEnd) { this.cEnd = cEnd; }
 
-    public String getC_location() { return c_location; }
+    public String getCLocation() { return cLocation; }
 
-    public void setC_location(String c_location) { this.c_location = c_location; }
+    public void setCLocation(String cLocation) { this.cLocation = cLocation; }
 
-    public String getC_type() { return c_type; }
+    public String getCType() { return cType; }
 
-    public void setC_type(String c_type) { this.c_type = c_type; }
+    public void setCType(String cType) { this.cType = cType; }
 
-    public String getC_school() { return c_school; }
+    public String getCSchool() { return cSchool; }
 
-    public void setC_school(String c_school) { this.c_school = c_school; }
+    public void setCSchool(String cSchool) { this.cSchool = cSchool; }
 
-    public String getC_period() { return c_period; }
+    public String getCPeriod() { return cPeriod; }
 
-    public void setC_period(String c_period) { this.c_period = c_period; }
+    public void setCPeriod(String cPeriod) { this.cPeriod = cPeriod; }
 
-    public String getC_capacity() { return c_capacity; }
+    public String getCCapacity() { return cCapacity; }
 
-    public void setC_capacity(String c_capacity) { this.c_capacity = c_capacity; }
+    public void setCCapacity(String cCapacity) { this.cCapacity = cCapacity; }
 
-    public String getC_current() { return c_current; }
+    public String getCCurrent() { return cCurrent; }
 
-    public void setC_current(String c_current) { this.c_current = c_current; }
+    public void setCCurrent(String cCurrent) { this.cCurrent = cCurrent; }
 
     public ArrayList<IdName> getTeachers() { return teachers; }
 

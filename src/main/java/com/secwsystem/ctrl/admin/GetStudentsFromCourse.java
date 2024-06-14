@@ -58,7 +58,7 @@ public class GetStudentsFromCourse implements Initializable {
         AdminMainController controller = (AdminMainController) AdminContext.controllers.get("MainController");
         Course course = controller.getCourse();
 
-        LabelName.setText(course.getC_name()+"下面的学生");
+        LabelName.setText(course.getCName()+"下面的学生");
 
         StudentDAO studentDAO = new StudentDAO();
         if(course.getStudents()!=null && !course.getStudents().isEmpty()){

@@ -111,15 +111,15 @@ public class AddStudent {
 
             // 设置学生对象的各种属性，从相应的文本字段获取输入信息
             student.setSid(sid.getText().trim());
-            student.setS_name(sName.getText().trim());
-            student.setS_sex(sSex.getText().trim());
-            student.setS_phone(sPhone.getText().trim());
-            student.setS_idcard(sIdcard.getText().trim());
-            student.setS_school(sSchool.getText().trim());
-            student.setS_class(sClass.getText().trim());
-            student.setS_email(sEmail.getText().trim());
-            student.setS_password(sPassword.getText().trim());
-            student.setS_entertime(sEntertime.getText().trim());
+            student.setSName(sName.getText().trim());
+            student.setSSex(sSex.getText().trim());
+            student.setSPhoneNumber(sPhone.getText().trim());
+            student.setSIdcard(sIdcard.getText().trim());
+            student.setSSchool(sSchool.getText().trim());
+            student.setSClass(sClass.getText().trim());
+            student.setSEmail(sEmail.getText().trim());
+            student.setSPassword(sPassword.getText().trim());
+            student.setSEntertime(sEntertime.getText().trim());
 
             // 尝试将学生对象添加到数据库
             if (studentDAO.add(student)) {

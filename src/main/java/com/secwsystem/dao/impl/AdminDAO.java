@@ -50,8 +50,8 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
                 AdminPrivate admin = new AdminPrivate();
                 admin.setId(rs.getLong("id"));
                 admin.setAid(rs.getString("aid"));
-                admin.setA_name(rs.getString("a_name"));
-                admin.setA_password(rs.getString("a_password"));
+                admin.setAName(rs.getString("a_name"));
+                admin.setAPassword(rs.getString("a_password"));
                 admins.add(admin);
             }
         } catch (SQLException e) {
@@ -59,7 +59,7 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接、PreparedStatement和ResultSet
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         // 返回包含所有管理员私有信息的ArrayList
         return admins;
@@ -89,8 +89,8 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句中的参数值，分别为管理员的ID、名称和密码
             stmt.setString(1, admin.getAid());
-            stmt.setString(2, admin.getA_name());
-            stmt.setString(3, admin.getA_password());
+            stmt.setString(2, admin.getAName());
+            stmt.setString(3, admin.getAPassword());
             // 执行更新操作，将管理员信息插入到数据库中
             stmt.executeUpdate();
         } catch (Exception e) {
@@ -98,7 +98,7 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement对象
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行到这里，说明添加操作成功，返回true
         return true;
@@ -133,7 +133,7 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement，以释放资源
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行到这里，说明删除操作完成，返回true
         return true;
@@ -164,7 +164,7 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             String sql = "UPDATE " + DBConnection.admin + " SET a_name=? WHERE aid=?";
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句参数，分别为新的名称和管理员ID
-            stmt.setString(1, admin.getA_name());
+            stmt.setString(1, admin.getAName());
             stmt.setString(2, admin.getAid());
             // 执行更新操作
             stmt.executeUpdate();
@@ -173,7 +173,7 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement，释放资源
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行到这里，说明更新操作成功，返回true
         return true;
@@ -202,8 +202,8 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             String sql = "UPDATE " + DBConnection.admin + " SET a_name=?,a_password=? WHERE aid=?";
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句中的参数值
-            stmt.setString(1, admin.getA_name());
-            stmt.setString(2, admin.getA_password());
+            stmt.setString(1, admin.getAName());
+            stmt.setString(2, admin.getAPassword());
             stmt.setString(3, admin.getAid());
             // 执行更新操作
             stmt.executeUpdate();
@@ -212,7 +212,7 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行到这里，说明更新操作完成，返回true
         return true;
@@ -256,7 +256,7 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接、PreparedStatement和ResultSet，释放资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         return admin;
     }
@@ -298,7 +298,7 @@ public class AdminDAO implements DAOForAccount<AdminPublic, AdminPrivate> {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和相关资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         return admin;
     }

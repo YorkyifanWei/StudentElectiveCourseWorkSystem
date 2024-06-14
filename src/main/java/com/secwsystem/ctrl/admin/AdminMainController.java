@@ -154,11 +154,11 @@ public class AdminMainController implements Initializable {
         AdminLogin controller = (AdminLogin) AdminContext.controllers.get(AdminLogin.class.getSimpleName());
         String aid = controller.getaid();
         a_main_aid.setText(aid);
-        a_main_name.setText(adminDAO.getPublic(aid).getA_name());
+        a_main_name.setText(adminDAO.getPublic(aid).getAName());
         //
 
         CourseDAO courseDAO = new CourseDAO();
-        List<Course> courseList = courseDAO.getAllCourses();
+        List<Course> courseList = courseDAO.getAll();
         if(courseList != null && !courseList.isEmpty()){
             ObservableList<Course> courses = FXCollections.observableArrayList(courseList);
             CouTable.setItems(courses);
@@ -286,7 +286,7 @@ public class AdminMainController implements Initializable {
                 if (index < 0) {
                     throw new AdminException.NoSelectionException();
                 }
-                if (new Admin().showMessage("删除确认", "你确定删除" + course.getC_name() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
+                if (new Admin().showMessage("删除确认", "你确定删除" + course.getCName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
                     if (new CourseDAO().deleteCourse(course)) {
                         CouTable.getItems().remove(index);
                         CouTable.refresh();
@@ -302,7 +302,7 @@ public class AdminMainController implements Initializable {
                 if (index < 0) {
                     throw new AdminException.NoSelectionException();
                 }
-                if (new Admin().showMessage("删除确认", "你确定删除" + teacher.getT_name() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
+                if (new Admin().showMessage("删除确认", "你确定删除" + teacher.getTName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
                     if (new TeacherDAO().delete(teacher.getTid())) {
                         TeaTable.getItems().remove(index);
                         TeaTable.refresh();
@@ -318,7 +318,7 @@ public class AdminMainController implements Initializable {
                 if (index < 0) {
                     throw new AdminException.NoSelectionException();
                 }
-                if (new Admin().showMessage("删除确认", "你确定删除" + student.getS_name() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
+                if (new Admin().showMessage("删除确认", "你确定删除" + student.getSName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
                     if (new StudentDAO().delete(student.getSid())) {
                         StuTable.getItems().remove(index);
                         StuTable.refresh();

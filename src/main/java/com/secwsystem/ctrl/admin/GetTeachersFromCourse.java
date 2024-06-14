@@ -61,7 +61,7 @@ public class GetTeachersFromCourse implements Initializable {
         AdminMainController controller = (AdminMainController) AdminContext.controllers.get("MainController");
         Course course = controller.getCourse();
 
-        LabelName.setText(course.getC_name()+"下面的讲师");
+        LabelName.setText(course.getCName()+"下面的讲师");
 
         TeacherDAO teacherDAO = new TeacherDAO();
         if(course.getTeachers() != null && !course.getTeachers().isEmpty()){

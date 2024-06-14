@@ -45,14 +45,14 @@ public class GetTeacherFromCourse implements Initializable {
         GetTeachersFromCourse controller = (GetTeachersFromCourse) AdminContext.controllers.get(GetTeachersFromCourse.class.getSimpleName());
         TeacherPrivate teacher = controller.getTeaFromCou();
         TeaId.setText(teacher.getTid());
-        TeaName.setText(teacher.getT_name());
-        TeaSex.setText(teacher.getT_sex());
-        TeaIdcard.setText(teacher.getT_idcard());
-        TeaPhone.setText(teacher.getT_phone());
-        TeaSchool.setText(teacher.getT_school());
-        TeaTitle.setText(teacher.getT_title());
-        TeaEmail.setText(teacher.getT_email());
-        TeaAddress.setText(teacher.getT_address());
-        TeaPassword.setText(teacher.getT_password());
+        TeaName.setText(teacher.getTName());
+        TeaSex.setText(teacher.getTSex());
+        TeaIdcard.setText(teacher.getTIdcard());
+        TeaPhone.setText(teacher.getTPhoneNumber());
+        TeaSchool.setText(teacher.getTSchool());
+        TeaTitle.setText(teacher.getTTitle());
+        TeaEmail.setText(teacher.getTEmail());
+        TeaAddress.setText(teacher.getTAddress());
+        TeaPassword.setText(teacher.getTPassword());
     }
 }

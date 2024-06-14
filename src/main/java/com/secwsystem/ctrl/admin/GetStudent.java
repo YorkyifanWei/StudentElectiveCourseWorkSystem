@@ -45,14 +45,14 @@ public class GetStudent implements Initializable {
         AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
         StudentPrivate student = controller.getStudent();
         StuId.setText(student.getSid());
-        StuName.setText(student.getS_name());
-        StuSex.setText(student.getS_sex());
-        StuPhone.setText(student.getS_phone());
-        StuIdcard.setText(student.getS_idcard());
-        StuSchool.setText(student.getS_school());
-        StuClass.setText(student.getS_class());
-        StuEmail.setText(student.getS_email());
-        StuEntertime.setText(student.getS_entertime());
-        StuPassword.setText(student.getS_password());
+        StuName.setText(student.getSName());
+        StuSex.setText(student.getSSex());
+        StuPhone.setText(student.getSPhoneNumber());
+        StuIdcard.setText(student.getSIdcard());
+        StuSchool.setText(student.getSSchool());
+        StuClass.setText(student.getSClass());
+        StuEmail.setText(student.getSEmail());
+        StuEntertime.setText(student.getSEntertime());
+        StuPassword.setText(student.getSPassword());
     }
 }

@@ -21,7 +21,7 @@ public class CourseDAO implements DAOForCourse {
      *
      * @return ArrayList<Course> 所有课程的列表，如果无法建立数据库连接，则返回null。
      */
-    public ArrayList<Course> getAllCourses() {
+    public ArrayList<Course> getAll() {
         // 连接到数据库
         Connection conn = DBConnection.getConn();
         PreparedStatement stmt = null;
@@ -48,7 +48,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         return courses;
     }
@@ -75,23 +75,23 @@ public class CourseDAO implements DAOForCourse {
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句中的参数值，对应课程的各种属性
             stmt.setString(1, course.getCid());
-            stmt.setString(2, course.getC_name());
-            stmt.setString(3, course.getC_info());
-            stmt.setString(4, course.getC_time());
-            stmt.setString(5, course.getC_init());
-            stmt.setString(6, course.getC_end());
-            stmt.setString(7, course.getC_location());
-            stmt.setString(8, course.getC_type());
-            stmt.setString(9, course.getC_school());
-            stmt.setString(10, course.getC_period());
-            stmt.setString(11, course.getC_capacity());
-            stmt.setString(12, course.getC_current());
+            stmt.setString(2, course.getCName());
+            stmt.setString(3, course.getCInfo());
+            stmt.setString(4, course.getCTime());
+            stmt.setString(5, course.getCInti());
+            stmt.setString(6, course.getCEnd());
+            stmt.setString(7, course.getCLocation());
+            stmt.setString(8, course.getCType());
+            stmt.setString(9, course.getCSchool());
+            stmt.setString(10, course.getCPeriod());
+            stmt.setString(11, course.getCCapacity());
+            stmt.setString(12, course.getCCurrent());
             // 执行更新操作，将课程信息插入数据库
             stmt.executeUpdate();
 
             // 遍历课程的教师列表，为每个教师和课程建立关联关系
             for (int i = 0; i < course.getTeachers().size(); i++) {
-                sql = "insert into " + DBConnection.teacher_course + " (cid,tid) values(?,?)";
+                sql = "insert into " + DBConnection.teacherCourse + " (cid,tid) values(?,?)";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, course.getCid());
                 stmt.setString(2, course.getTeachers().get(i).getId());
@@ -100,7 +100,7 @@ public class CourseDAO implements DAOForCourse {
 
             // 遍历课程的学生列表，为每个学生和课程建立关联关系
             for (int i = 0; i < course.getStudents().size(); i++) {
-                sql = "insert into " + DBConnection.student_course + " (cid,sid) values(?,?)";
+                sql = "insert into " + DBConnection.studentCourse + " (cid,sid) values(?,?)";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, course.getCid());
                 stmt.setString(2, course.getStudents().get(i).getId());
@@ -111,7 +111,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 添加成功，返回true
         return true;
@@ -148,7 +148,7 @@ public class CourseDAO implements DAOForCourse {
 
             // 遍历课程中的每个教师，删除他们与课程的关联
             for (int i = 0; i < course.getTeachers().size(); i++) {
-                sql = "delete from " + DBConnection.teacher_course + " where cid=? and tid=?";
+                sql = "delete from " + DBConnection.teacherCourse + " where cid=? and tid=?";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, course.getCid());
                 stmt.setString(2, course.getTeachers().get(i).getId());
@@ -157,7 +157,7 @@ public class CourseDAO implements DAOForCourse {
 
             // 遍历课程中的每个学生，删除他们与课程的关联
             for (int i = 0; i < course.getStudents().size(); i++) {
-                sql = "delete from " + DBConnection.student_course + " where cid=? and sid=?";
+                sql = "delete from " + DBConnection.studentCourse + " where cid=? and sid=?";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, course.getCid());
                 stmt.setString(2, course.getStudents().get(i).getId());
@@ -168,7 +168,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果删除成功，返回true
         return true;
@@ -200,30 +200,30 @@ public class CourseDAO implements DAOForCourse {
             String sql = "update " + DBConnection.course + " set c_name=?,c_info=?,c_time=?,c_init=?,c_end=?,c_location=?,c_type=?,c_school=?,c_period=?,c_capacity=?,c_current=? where cid=?";
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句中的参数值，更新课程基本信息
-            stmt.setString(1, course.getC_name());
-            stmt.setString(2, course.getC_info());
-            stmt.setString(3, course.getC_time());
-            stmt.setString(4, course.getC_init());
-            stmt.setString(5, course.getC_end());
-            stmt.setString(6, course.getC_location());
-            stmt.setString(7, course.getC_type());
-            stmt.setString(8, course.getC_school());
-            stmt.setString(9, course.getC_period());
-            stmt.setString(10, course.getC_capacity());
-            stmt.setString(11, course.getC_current());
+            stmt.setString(1, course.getCName());
+            stmt.setString(2, course.getCInfo());
+            stmt.setString(3, course.getCTime());
+            stmt.setString(4, course.getCInti());
+            stmt.setString(5, course.getCEnd());
+            stmt.setString(6, course.getCLocation());
+            stmt.setString(7, course.getCType());
+            stmt.setString(8, course.getCSchool());
+            stmt.setString(9, course.getCPeriod());
+            stmt.setString(10, course.getCCapacity());
+            stmt.setString(11, course.getCCurrent());
             stmt.setString(12, course.getCid());
             stmt.executeUpdate();
 
             // 删除原有的教师和学生关联信息
             for (int i = 0; i < oldCourse.getTeachers().size(); i++) {
-                sql = "delete from " + DBConnection.teacher_course + " where cid=? and tid=?";
+                sql = "delete from " + DBConnection.teacherCourse + " where cid=? and tid=?";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, oldCourse.getCid());
                 stmt.setString(2, oldCourse.getTeachers().get(i).getId());
                 stmt.executeUpdate();
             }
             for (int i = 0; i < oldCourse.getStudents().size(); i++) {
-                sql = "delete from " + DBConnection.student_course + " where cid=? and sid=?";
+                sql = "delete from " + DBConnection.studentCourse + " where cid=? and sid=?";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, oldCourse.getCid());
                 stmt.setString(2, oldCourse.getStudents().get(i).getId());
@@ -232,14 +232,14 @@ public class CourseDAO implements DAOForCourse {
 
             // 添加新的教师和学生关联信息
             for (int i = 0; i < course.getTeachers().size(); i++) {
-                sql = "insert into " + DBConnection.teacher_course + " (cid,tid) values(?,?)";
+                sql = "insert into " + DBConnection.teacherCourse + " (cid,tid) values(?,?)";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, course.getCid());
                 stmt.setString(2, course.getTeachers().get(i).getId());
                 stmt.executeUpdate();
             }
             for (int i = 0; i < course.getStudents().size(); i++) {
-                sql = "insert into " + DBConnection.student_course + " (cid,sid) values(?,?)";
+                sql = "insert into " + DBConnection.studentCourse + " (cid,sid) values(?,?)";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, course.getCid());
                 stmt.setString(2, course.getStudents().get(i).getId());
@@ -248,7 +248,7 @@ public class CourseDAO implements DAOForCourse {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 更新操作暂时总是返回false，可能需要修改为返回更新结果的正确处理
         return true;
@@ -288,7 +288,7 @@ public class CourseDAO implements DAOForCourse {
                         rs.getString("c_period"), rs.getString("c_capacity"),
                         rs.getString("c_current"), new ArrayList<>(), new ArrayList<>());
                 // 遍历课程教师列表，查询并添加每个教师的ID
-                sql = "select tid from " + DBConnection.teacher_course + " where cid=?";
+                sql = "select tid from " + DBConnection.teacherCourse + " where cid=?";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, course.getCid());
                 rs = stmt.executeQuery();
@@ -297,7 +297,7 @@ public class CourseDAO implements DAOForCourse {
                 }
 
                 // 遍历课程学生列表，查询并添加每个学生的ID
-                sql = "select sid from " + DBConnection.student_course + " where cid=?";
+                sql = "select sid from " + DBConnection.studentCourse + " where cid=?";
                 stmt = conn.prepareStatement(sql);
                 stmt.setString(1, course.getCid());
                 rs = stmt.executeQuery();
@@ -309,7 +309,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         return course;
     }
@@ -333,7 +333,7 @@ public class CourseDAO implements DAOForCourse {
         }
         try {
             // 构造SQL语句，用于在teacher_course表中插入新的记录。
-            String sql = "insert into " + DBConnection.teacher_course + "(cid, tid) values(?, ?)";
+            String sql = "insert into " + DBConnection.teacherCourse + "(cid, tid) values(?, ?)";
             stmt = conn.prepareStatement(sql);
 
             // 设置SQL语句中的参数值，分别为课程ID和教师ID。
@@ -347,7 +347,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement，以释放资源。
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         return true;
     }
@@ -371,7 +371,7 @@ public class CourseDAO implements DAOForCourse {
         }
         try {
             // 构造删除教师信息的SQL语句，参数化查询以避免SQL注入
-            String sql = "delete from " + DBConnection.teacher_course + " where cid=? and tid=?";
+            String sql = "delete from " + DBConnection.teacherCourse + " where cid=? and tid=?";
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句的参数值
             stmt.setString(1, cid);
@@ -383,7 +383,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement对象
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 删除操作成功，返回true
         return true;
@@ -407,7 +407,7 @@ public class CourseDAO implements DAOForCourse {
         }
         try {
             // 组织SQL语句，用于插入学生和课程的关系
-            String sql = "insert into " + DBConnection.student_course + "(cid, sid) values(?, ?)";
+            String sql = "insert into " + DBConnection.studentCourse + "(cid, sid) values(?, ?)";
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句中的参数值
             stmt.setString(1, cid);
@@ -419,7 +419,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement对象
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 如果执行到此处，说明学生添加操作成功，返回true
         return true;
@@ -444,7 +444,7 @@ public class CourseDAO implements DAOForCourse {
         }
         try {
             // 构造删除选课信息的SQL语句，使用预编译方式防止SQL注入
-            String sql = "delete from " + DBConnection.student_course + " where cid=? and sid=?";
+            String sql = "delete from " + DBConnection.studentCourse + " where cid=? and sid=?";
             stmt = conn.prepareStatement(sql);
             // 设置SQL语句中的参数值
             stmt.setString(1, cid);
@@ -456,7 +456,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接和PreparedStatement，释放资源
-            DBConnection.close(conn, stmt, null);
+            DBConnection.closeConn(conn, stmt, null);
         }
         // 删除操作成功，返回true
         return true;
@@ -482,7 +482,7 @@ public class CourseDAO implements DAOForCourse {
         }
         try {
             // 准备查询语句，查询指定教师ID对应的课程ID
-            String sql = "select cid from " + DBConnection.teacher_course + " where tid=?";
+            String sql = "select cid from " + DBConnection.teacherCourse + " where tid=?";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, tid);
             rs = stmt.executeQuery();
@@ -495,7 +495,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接及相关资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         // 如果课程ID列表为空，说明未找到该教师的任何课程，返回null
         if (cids.isEmpty()) {
@@ -535,7 +535,7 @@ public class CourseDAO implements DAOForCourse {
         }
         try {
             // 准备SQL语句，查询指定学生ID的选课信息
-            String sql = "select cid from " + DBConnection.student_course + " where sid=?";
+            String sql = "select cid from " + DBConnection.studentCourse + " where sid=?";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, sid);
             rs = stmt.executeQuery();
@@ -549,7 +549,7 @@ public class CourseDAO implements DAOForCourse {
             throw new RuntimeException(e);
         } finally {
             // 关闭数据库连接及相关资源
-            DBConnection.close(conn, stmt, rs);
+            DBConnection.closeConn(conn, stmt, rs);
         }
         // 如果查询结果为空，说明学生没有选课，返回null
         if (cids.isEmpty()) {

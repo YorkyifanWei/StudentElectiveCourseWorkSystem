@@ -209,19 +209,19 @@ public class TeacherMainController implements Initializable {
         TeacherLogin controller = (TeacherLogin) TeacherContext.controllers.get(TeacherLogin.class.getSimpleName());
         String tid = controller.gettid();
         a_main_tid.setText(tid);
-        a_main_name.setText(teacherDAO.getPublic(tid).getT_name());
-        a_main_title.setText(teacherDAO.getPublic(tid).getT_title());
-        a_main_school.setText(teacherDAO.getPublic(tid).getT_school());
-        a_main_sex.setText(teacherDAO.getPublic(tid).getT_sex());
-        a_main_phonenumber.setText(teacherDAO.getPublic(tid).getT_phone());
-        a_main_email.setText(teacherDAO.getPublic(tid).getT_email());
-        a_main_address.setText(teacherDAO.getPublic(tid).getT_address());
-        a_main_idcard.setText(teacherDAO.getPrivate(tid).getT_idcard());
+        a_main_name.setText(teacherDAO.getPublic(tid).getTName());
+        a_main_title.setText(teacherDAO.getPublic(tid).getTTitle());
+        a_main_school.setText(teacherDAO.getPublic(tid).getTSchool());
+        a_main_sex.setText(teacherDAO.getPublic(tid).getTSex());
+        a_main_phonenumber.setText(teacherDAO.getPublic(tid).getTPhoneNumber());
+        a_main_email.setText(teacherDAO.getPublic(tid).getTEmail());
+        a_main_address.setText(teacherDAO.getPublic(tid).getTAddress());
+        a_main_idcard.setText(teacherDAO.getPrivate(tid).getTIdcard());
 
 
         CourseDAO courseDAO = new CourseDAO();
 
-        ObservableList<Course> all_list1 = FXCollections.observableArrayList(courseDAO.getAllCourses());
+        ObservableList<Course> all_list1 = FXCollections.observableArrayList(courseDAO.getAll());
 
         tableview1.setItems(all_list1);
         col_id1.setCellValueFactory(new PropertyValueFactory<Course, String>("id"));

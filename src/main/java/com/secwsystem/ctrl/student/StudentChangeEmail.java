@@ -47,7 +47,7 @@ public class StudentChangeEmail {
                 StudentLogin controller = (StudentLogin) StudentContext.controllers.get(StudentLogin.class.getSimpleName());
                 StudentDAO studentDAO = new StudentDAO();
                 StudentPrivate studentPrivate = studentDAO.getPrivate(controller.getsid());
-                studentPrivate.setS_email(a_new_email.getText());
+                studentPrivate.setSEmail(a_new_email.getText());
                 if(studentDAO.updatePrivate(studentPrivate)){
                     //生成提示界面，关闭本界面
                     new Student().showMessage("提示","邮箱修改成功", Alert.AlertType.INFORMATION,0);

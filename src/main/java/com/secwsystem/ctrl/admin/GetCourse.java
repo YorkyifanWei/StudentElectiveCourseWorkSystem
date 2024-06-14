@@ -58,16 +58,16 @@ public class GetCourse implements Initializable {
         AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
         Course course = controller.getCourse();
         CouId.setText(course.getCid());
-        CouName.setText(course.getC_name());
-        CouType.setText(course.getC_type());
-        CouInfo.setText(course.getC_info());
-        CouTime.setText(course.getC_time());
-        CouSchool.setText(course.getC_school());
-        CouPeriod.setText(course.getC_period());
-        CouInit.setText(course.getC_init());
-        CouEnd.setText(course.getC_end());
-        CouLocation.setText(course.getC_location());
-        CouCurrent.setText(course.getC_current()+"/"+course.getC_capacity());
+        CouName.setText(course.getCName());
+        CouType.setText(course.getCType());
+        CouInfo.setText(course.getCInfo());
+        CouTime.setText(course.getCTime());
+        CouSchool.setText(course.getCSchool());
+        CouPeriod.setText(course.getCPeriod());
+        CouInit.setText(course.getCInti());
+        CouEnd.setText(course.getCEnd());
+        CouLocation.setText(course.getCLocation());
+        CouCurrent.setText(course.getCCurrent()+"/"+course.getCCapacity());
     }
 
     @FXML

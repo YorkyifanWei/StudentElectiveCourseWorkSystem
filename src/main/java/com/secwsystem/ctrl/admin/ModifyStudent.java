@@ -66,15 +66,15 @@ public class ModifyStudent implements Initializable{
         AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
         StudentPrivate student = controller.getStudent();
         StuId.setText(student.getSid());
-        StuName.setText(student.getS_name());
-        StuSex.setText(student.getS_sex());
-        StuPhone.setText(student.getS_phone());
-        StuIdcard.setText(student.getS_idcard());
-        StuSchool.setText(student.getS_school());
-        StuClass.setText(student.getS_class());
-        StuEmail.setText(student.getS_email());
-        StuEntertime.setText(student.getS_entertime());
-        StuPassword.setText(student.getS_password());
+        StuName.setText(student.getSName());
+        StuSex.setText(student.getSSex());
+        StuPhone.setText(student.getSPhoneNumber());
+        StuIdcard.setText(student.getSIdcard());
+        StuSchool.setText(student.getSSchool());
+        StuClass.setText(student.getSClass());
+        StuEmail.setText(student.getSEmail());
+        StuEntertime.setText(student.getSEntertime());
+        StuPassword.setText(student.getSPassword());
     }
 
     @FXML
@@ -91,14 +91,14 @@ public class ModifyStudent implements Initializable{
                 throw new AdminException.TextFieldNullException();
             }
             student.setSid(StuId.getText().trim());
-            student.setS_name(StuName.getText().trim());
-            student.setS_sex(StuSex.getText().trim());
-            student.setS_phone(StuPhone.getText().trim());
-            student.setS_idcard(StuIdcard.getText().trim());
-            student.setS_school(StuSchool.getText().trim());
-            student.setS_class(StuClass.getText().trim());
-            student.setS_email(StuEmail.getText().trim());
-            student.setS_entertime(StuEntertime.getText().trim());
+            student.setSName(StuName.getText().trim());
+            student.setSSex(StuSex.getText().trim());
+            student.setSPhoneNumber(StuPhone.getText().trim());
+            student.setSIdcard(StuIdcard.getText().trim());
+            student.setSSchool(StuSchool.getText().trim());
+            student.setSClass(StuClass.getText().trim());
+            student.setSEmail(StuEmail.getText().trim());
+            student.setSEntertime(StuEntertime.getText().trim());
             if (studentDAO.updatePrivate(student)) {
                 controller.ModifyStuToTable(student);
                 new Admin().showMessage("修改成功", "修改成功", Alert.AlertType.INFORMATION, 0);

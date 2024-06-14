@@ -2,14 +2,14 @@ package com.secwsystem.dao.pojo;
 
 public class AdminPublic {
     private String aid;// 管理员id
-    private String a_name;// 管理员姓名
+    private String aName;// 管理员姓名
 
     public AdminPublic() {
     }
 
-    public AdminPublic(String aid, String a_name) {
+    public AdminPublic(String aid, String aName) {
         this.aid = aid;
-        this.a_name = a_name;
+        this.aName = aName;
     }
 
     // getters and setters
@@ -17,7 +17,7 @@ public class AdminPublic {
 
     public void setAid(String aid) { this.aid = aid; }
 
-    public String getA_name() { return a_name; }
+    public String getAName() { return aName; }
 
-    public void setA_name(String a_name) { this.a_name = a_name; }
+    public void setAName(String aName) { this.aName = aName; }
 }

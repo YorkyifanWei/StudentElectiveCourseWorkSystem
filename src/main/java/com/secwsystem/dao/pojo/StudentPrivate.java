@@ -3,118 +3,74 @@ package com.secwsystem.dao.pojo;
 public class StudentPrivate {
     private long id;// 主键
     private String sid;// 学号
-    private String s_name;// 姓名
-    private String s_class;// 班级
-    private String s_school;// 学院
-    private String s_sex;// 性别
-    private String s_phone;// 电话
-    private String s_email;// 邮箱
-    private String s_idcard;// 身份证
-    private String s_password;// 密码
-    private String s_entertime;// 入学时间
+    private String sName;// 姓名
+    private String sClass;// 班级
+    private String sSchool;// 学院
+    private String sSex;// 性别
+    private String sPhoneNumber;// 电话
+    private String sEmail;// 邮箱
+    private String sIdcard;// 身份证
+    private String sPassword;// 密码
+    private String sEntertime;// 入学时间
 
     public StudentPrivate() {
     }
 
-    public StudentPrivate(Long id, String sid, String s_name, String s_class, String s_school, String s_sex, String s_phone, String s_email, String s_idcard, String s_password, String s_entertime) {
+    public StudentPrivate(Long id, String sid, String sName, String sClass, String sSchool, String sSex, String sPhoneNumber, String sEmail, String sIdcard, String sPassword, String sEntertime) {
         this.id = id;
         this.sid = sid;
-        this.s_name = s_name;
-        this.s_class = s_class;
-        this.s_school = s_school;
-        this.s_sex = s_sex;
-        this.s_phone = s_phone;
-        this.s_email = s_email;
-        this.s_idcard = s_idcard;
-        this.s_password = s_password;
-        this.s_entertime = s_entertime;
+        this.sName = sName;
+        this.sClass = sClass;
+        this.sSchool = sSchool;
+        this.sSex = sSex;
+        this.sPhoneNumber = sPhoneNumber;
+        this.sEmail = sEmail;
+        this.sIdcard = sIdcard;
+        this.sPassword = sPassword;
+        this.sEntertime = sEntertime;
     }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Long id) { this.id = id; }
 
-    public String getSid() {
-        return sid;
-    }
+    public String getSid() { return sid; }
 
-    public void setSid(String sid) {
-        this.sid = sid;
-    }
+    public void setSid(String sid) { this.sid = sid; }
 
-    public String getS_name() {
-        return s_name;
-    }
+    public String getSName() { return sName; }
 
-    public void setS_name(String s_name) {
-        this.s_name = s_name;
-    }
+    public void setSName(String sName) { this.sName = sName; }
 
-    public String getS_class() {
-        return s_class;
-    }
+    public String getSClass() { return sClass; }
 
-    public void setS_class(String s_class) {
-        this.s_class = s_class;
-    }
+    public void setSClass(String sClass) { this.sClass = sClass; }
 
-    public String getS_school() {
-        return s_school;
-    }
+    public String getSSchool() { return sSchool; }
 
-    public void setS_school(String s_school) {
-        this.s_school = s_school;
-    }
+    public void setSSchool(String sSchool) { this.sSchool = sSchool; }
 
-    public String getS_sex() {
-        return s_sex;
-    }
+    public String getSSex() { return sSex; }
 
-    public void setS_sex(String s_sex) {
-        this.s_sex = s_sex;
-    }
+    public void setSSex(String sSex) { this.sSex = sSex; }
 
-    public String getS_phone() {
-        return s_phone;
-    }
+    public String getSPhoneNumber() { return sPhoneNumber; }
 
-    public void setS_phone(String s_phone) {
-        this.s_phone = s_phone;
-    }
+    public void setSPhoneNumber(String sPhoneNumber) { this.sPhoneNumber = sPhoneNumber; }
 
-    public String getS_email() {
-        return s_email;
-    }
+    public String getSEmail() { return sEmail; }
 
-    public void setS_email(String s_email) {
-        this.s_email = s_email;
-    }
+    public void setSEmail(String sEmail) { this.sEmail = sEmail; }
 
-    public String getS_idcard() {
-        return s_idcard;
-    }
+    public String getSIdcard() { return sIdcard; }
 
-    public void setS_idcard(String s_idcard) {
-        this.s_idcard = s_idcard;
-    }
+    public void setSIdcard(String sIdcard) { this.sIdcard = sIdcard; }
 
-    public String getS_password() {
-        return s_password;
-    }
+    public String getSPassword() { return sPassword; }
 
-    public void setS_password(String s_password) {
-        this.s_password = s_password;
-    }
+    public void setSPassword(String sPassword) { this.sPassword = sPassword; }
 
-    public String getS_entertime() {
-        return s_entertime;
-    }
+    public String getSEntertime() { return sEntertime; }
 
-    public void setS_entertime(String s_entertime) {
-        this.s_entertime = s_entertime;
-    }
+    public void setSEntertime(String sEntertime) { this.sEntertime = sEntertime; }
 }
