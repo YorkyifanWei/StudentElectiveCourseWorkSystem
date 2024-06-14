@@ -82,7 +82,7 @@ public class AddTeacherIntoCourse {
                 // 获取添加的教师信息
                 TeacherPrivate teacher = teacherDAO.getPrivate(teacherInCourse.getText().trim());
                 // 将教师信息添加到教师列表中
-                getTeasFromCouController.AddTeaToTable(teacher);
+                getTeasFromCouController.addTeacherToTable(teacher);
                 // 显示添加成功的提示信息
                 new AdminApplication().showMessage("添加成功", "添加成功", Alert.AlertType.INFORMATION, 0);
                 stage.close();

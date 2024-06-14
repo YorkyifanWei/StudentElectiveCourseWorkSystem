@@ -47,7 +47,7 @@ public class AdminApplication extends Application {
             // 创建FXMLLoader实例，用于加载FXML文件
             FXMLLoader loader = new FXMLLoader();
             // 设置FXML文件的位置，使用相对路径从类路径中加载资源
-            loader.setLocation(getClass().getResource("/com/secwsystem/admin/login_admin.fxml"));
+            loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminLogin.fxml"));
             // 加载FXML文件，返回界面根节点
             AnchorPane root = loader.load();
             // 创建场景，并将加载的界面根节点设置为场景的内容
@@ -81,7 +81,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载界面布局文件。
         FXMLLoader loader = new FXMLLoader();
         // 设置加载的FXML文件路径，使用相对路径从类路径中获取。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/main_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminMain.fxml"));
         // 通过loader加载FXML文件，返回界面根节点。
         AnchorPane root = loader.load();
         // 创建Scene对象，设置场景为加载的界面根节点。
@@ -114,7 +114,7 @@ public class AdminApplication extends Application {
         // 初始化FXMLLoader，用于加载用户界面的定义。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径，加载添加课程的FXML文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/add_Cou_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddCourse.fxml"));
         // 通过loader加载FXML文件，得到用户界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，设置其内容为加载的用户界面根节点。
@@ -147,7 +147,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader实例，用于加载用户界面的定义。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径，加载添加讲师的界面。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/add_Tea_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddTeacher.fxml"));
         // 通过loader加载界面，得到界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，将加载的界面作为其内容。
@@ -179,7 +179,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader实例，用于加载用户界面资源。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面资源的位置，指向添加学生界面的FXML文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/add_Stu_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddStudent.fxml"));
         // 通过loader加载界面资源，返回界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的Scene对象，将加载的界面作为其内容。
@@ -215,7 +215,7 @@ public class AdminApplication extends Application {
         // 初始化FXMLLoader，用于加载界面布局
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的位置
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/change_password.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminChangePassword.fxml"));
         // 加载FXML文件，得到界面根节点
         AnchorPane root = loader.load();
         // 创建场景，并将根节点设置为该场景的内容
@@ -248,7 +248,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载用户界面。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径，加载修改课程的FXML文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/modify_Cou_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminModifyCourse.fxml"));
         // 通过loader加载FXML文件，得到根节点AnchorPane。
         AnchorPane root = loader.load();
         // 创建一个新的场景，将加载的根节点设置为此场景的内容。
@@ -280,7 +280,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载界面布局文件
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的路径，该路径为相对于类路径的路径
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/modify_Tea_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminModifyTeacher.fxml"));
         // 通过loader加载界面布局文件，返回布局根节点
         AnchorPane root = loader.load();
         // 创建新的场景，将加载的界面作为场景的内容
@@ -312,7 +312,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载用户界面。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/modify_Stu_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminModifyStudent.fxml"));
         // 通过loader加载用户界面，得到根节点。
         AnchorPane root = loader.load();
         // 创建新的场景，设置根节点为加载的用户界面。
@@ -347,7 +347,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载FXML文件
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的位置，该文件定义了课程查询窗口的界面布局
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/get_Cou_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetCourse.fxml"));
         // 通过loader加载FXML文件，得到界面的根节点
         AnchorPane root = loader.load();
         // 创建Scene对象，设置其根节点为加载得到的界面根节点
@@ -373,7 +373,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载FXML文件
         FXMLLoader loader = new FXMLLoader();
         // 设置FXMLLoader的资源位置，指向讲师查询界面的FXML文件
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/get_Tea_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetTeacher.fxml"));
         // 使用FXMLLoader加载界面，并返回加载后的根节点
         AnchorPane root = loader.load();
         // 创建一个新的Scene对象，用于包含加载后的界面
@@ -401,7 +401,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader实例，用于加载界面布局文件
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的路径，该路径是一个相对路径，指向com.secwsystem.admin.get_Stu_admin.fxml文件
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/get_Stu_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetStudent.fxml"));
         // 通过loader加载FXML文件，返回一个AnchorPane对象，该对象是界面的根节点
         AnchorPane root = loader.load();
         // 创建一个新的Scene对象，将加载的界面作为其内容
@@ -427,7 +427,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载FXML文件。
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的位置，该文件位于资源目录下，用于定义窗口的布局。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/get_TeaFromCou_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetTeacherFromCourse.fxml"));
         // 通过loader加载FXML文件，得到窗口的根节点。
         AnchorPane root = loader.load();
 
@@ -456,7 +456,7 @@ public class AdminApplication extends Application {
         // 初始化FXMLLoader，用于加载界面资源。
         FXMLLoader loader = new FXMLLoader();
         // 设置界面资源的位置，路径指向fxml文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/get_TeasFromCou_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetTeachersFromCourse.fxml"));
         // 通过loader加载界面，得到界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，将加载的界面作为其内容。
@@ -484,7 +484,7 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader实例，用于加载界面资源。
         FXMLLoader loader = new FXMLLoader();
         // 设置界面资源的位置，路径相对于项目的根目录。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/get_StuFromCou_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetStudentFromCourse.fxml"));
         // 加载界面资源，返回界面的根节点。
         AnchorPane root = loader.load();
         // 创建新的Scene对象，设置其内容为加载的界面根节点。
@@ -508,8 +508,8 @@ public class AdminApplication extends Application {
     public void getStudentsFromCourse() throws IOException {
         // 创建FXMLLoader实例，用于加载界面资源。
         FXMLLoader loader = new FXMLLoader();
-        // 设置界面资源的位置，路径指向com.secwsystem.admin.get_StusFromCou_admin.fxml。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/get_StusFromCou_admin.fxml"));
+        // 设置界面资源的位置，路径指向com.secwsystem.admin.AdminGetStudentsFromCourse.fxml。
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetStudentsFromCourse.fxml"));
         // 通过loader加载界面，返回界面的根节点。
         AnchorPane root = loader.load();
         // 创建新的场景，将加载的界面作为其内容。
@@ -535,7 +535,7 @@ public class AdminApplication extends Application {
     public void addTeacherIntoCourse() throws IOException {
         // 使用FXMLLoader加载添加教师到课程的用户界面资源
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/add_TeaInCou_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddTeacherIntoCourse.fxml"));
         // 加载用户界面资源并将其作为根节点
         AnchorPane root = loader.load();
 
@@ -567,7 +567,7 @@ public class AdminApplication extends Application {
     public void addStudentIntoCourse() throws IOException {
         // 使用FXMLLoader加载添加学生到课程的用户界面资源。
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/add_StuInCou_admin.fxml"));
+        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddStudentIntoCourse.fxml"));
         // 加载用户界面资源并将其作为根节点。
         AnchorPane root = loader.load();
 

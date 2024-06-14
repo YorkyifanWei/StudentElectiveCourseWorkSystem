@@ -102,7 +102,7 @@ public class AddTeacher {
             // 添加教师信息到数据库
             if (teacherDAO.add(teacher)) {
                 AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
-                controller.AddTeaToTable(teacher);
+                controller.addTeacherToTable(teacher);
                 new AdminApplication().showMessage("提示", "教师添加成功！", Alert.AlertType.INFORMATION, 0);
                 stage.close();
             } else {

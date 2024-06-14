@@ -125,7 +125,7 @@ public class AddStudent {
             if (studentDAO.add(student)) {
                 // 如果添加成功，更新主控制器中的学生列表，并显示成功消息
                 AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
-                controller.AddStuToTable(student);
+                controller.addStudentToTable(student);
                 new AdminApplication().showMessage("提示","学生添加成功！", Alert.AlertType.INFORMATION,0);
                 stage.close();
             } else {

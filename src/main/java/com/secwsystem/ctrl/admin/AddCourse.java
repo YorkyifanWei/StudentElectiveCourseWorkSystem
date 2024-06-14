@@ -114,7 +114,7 @@ public class AddCourse {
             // 将课程添加到数据库
             if(courseDAO.addCourse(course)){
                 AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
-                controller.AddCourseToTable(course);
+                controller.addCourseToTable(course);
                 new AdminApplication().showMessage("创建成功","课程创建成功！", Alert.AlertType.INFORMATION,0);
                 stage.close();
             }else {

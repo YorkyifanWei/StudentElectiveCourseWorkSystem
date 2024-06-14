@@ -73,7 +73,7 @@ public class AddStudentIntoCourse {
                 // 获取添加的学生信息
                 StudentPrivate student = studentDAO.getPrivate(studentInCourse.getText().trim());
                 // 将学生添加到学生列表
-                getStusFromCouController.AddStuToTable(student);
+                getStusFromCouController.addStudentToTable(student);
                 // 显示添加成功的提示
                 new AdminApplication().showMessage("添加成功", "添加成功", Alert.AlertType.INFORMATION, 0);
                 stage.close();
