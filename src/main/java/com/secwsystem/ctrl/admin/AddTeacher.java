@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.TeacherDAO;
 import com.secwsystem.dao.pojo.TeacherPrivate;
 import javafx.fxml.FXML;
@@ -90,18 +90,18 @@ public class AddTeacher {
             if(teacherDAO.add(teacher)){
                 AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
                 controller.AddTeaToTable(teacher);
-                new Admin().showMessage("提示", "教师添加成功！", Alert.AlertType.INFORMATION, 0);
+                new AdminApplication().showMessage("提示", "教师添加成功！", Alert.AlertType.INFORMATION, 0);
                 stage.close();
             }else{
                 throw new AdminException.AddException();
             }
 
         }catch(AdminException.TextFieldNullException e){
-            new Admin().showMessage("提示", "请填写完整信息！", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("提示", "请填写完整信息！", Alert.AlertType.ERROR, 0);
         } catch (AdminException.TeacherExistException e) {
-            new Admin().showMessage("创建失败", "教师已存在！", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("创建失败", "教师已存在！", Alert.AlertType.ERROR, 0);
         } catch (AdminException.AddException e) {
-            new Admin().showMessage("创建异常", "添加失败,请重新添加！", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("创建异常", "添加失败,请重新添加！", Alert.AlertType.ERROR, 0);
         }
     }
 

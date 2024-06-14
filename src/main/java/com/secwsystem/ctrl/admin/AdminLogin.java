@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.LoginImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,13 +62,13 @@ public class AdminLogin implements Initializable {
                 throw new AdminException.LoginErrorException();
             }
             stage.close();
-            new Admin().mainApp();
+            new AdminApplication().mainApp();
         }catch(AdminException.IdNullException e){
-            new Admin().showMessage("登录异常","账号名不能为空!", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("登录异常","账号名不能为空!", Alert.AlertType.ERROR,0);
         }catch (AdminException.PasswordNullException e){
-            new Admin().showMessage("登录异常","密码不能为空!", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("登录异常","密码不能为空!", Alert.AlertType.ERROR,0);
         }catch(AdminException.LoginErrorException e){
-            new Admin().showMessage("登录异常","登录失败，请重新登录!", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("登录异常","登录失败，请重新登录!", Alert.AlertType.ERROR,0);
         }
     }
 

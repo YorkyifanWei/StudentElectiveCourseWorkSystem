@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.pojo.Course;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -72,11 +72,11 @@ public class GetCourse implements Initializable {
 
     @FXML
     void GetStusEvent() throws IOException {
-        new Admin().getStudentsFromCourse();
+        new AdminApplication().getStudentsFromCourse();
     }
 
     @FXML
     void GetTeasEvent() throws IOException {
-        new Admin().getTeachersFromCourse();
+        new AdminApplication().getTeachersFromCourse();
     }
 }

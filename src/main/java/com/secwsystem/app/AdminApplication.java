@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Optional;
 
-public class Admin extends Application {
+public class AdminApplication extends Application {
 
 
 

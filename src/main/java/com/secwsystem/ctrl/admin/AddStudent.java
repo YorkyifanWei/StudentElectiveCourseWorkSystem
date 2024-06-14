@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.StudentDAO;
 import com.secwsystem.dao.pojo.StudentPrivate;
 import javafx.fxml.FXML;
@@ -126,20 +126,20 @@ public class AddStudent {
                 // 如果添加成功，更新主控制器中的学生列表，并显示成功消息
                 AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
                 controller.AddStuToTable(student);
-                new Admin().showMessage("提示","学生添加成功！", Alert.AlertType.INFORMATION,0);
+                new AdminApplication().showMessage("提示","学生添加成功！", Alert.AlertType.INFORMATION,0);
                 stage.close();
             } else {
                 throw new AdminException.AddException();
             }
         } catch (AdminException.TextFieldNullException e) {
             // 如果文本字段为空，显示错误消息
-            new Admin().showMessage("提示","请填写完整信息！", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("提示","请填写完整信息！", Alert.AlertType.ERROR,0);
         } catch (AdminException.StudentExistException e) {
             // 如果学生已存在，显示错误消息
-            new Admin().showMessage("创建失败","该学生已存在！", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("创建失败","该学生已存在！", Alert.AlertType.ERROR,0);
         } catch (AdminException.AddException e) {
             // 如果添加学生失败，显示错误消息
-            new Admin().showMessage("创建异常","添加失败,请重新添加！", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("创建异常","添加失败,请重新添加！", Alert.AlertType.ERROR,0);
         }
     }
 

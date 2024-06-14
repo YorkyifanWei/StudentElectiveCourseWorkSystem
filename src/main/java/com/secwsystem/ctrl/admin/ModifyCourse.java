@@ -2,7 +2,7 @@ package com.secwsystem.ctrl.admin;
 
 import com.secwsystem.dao.impl.CourseDAO;
 import com.secwsystem.dao.pojo.Course;
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -111,15 +111,15 @@ public class ModifyCourse implements Initializable {
 
             if(courseDAO.updateCourse(course)){
                 controller.ModifyCourseToTable(course);
-                new Admin().showMessage("提示", "修改成功", Alert.AlertType.INFORMATION, 0);
+                new AdminApplication().showMessage("提示", "修改成功", Alert.AlertType.INFORMATION, 0);
                 stage.close();
             }else{
                 throw new AdminException.ModifyException();
             }
         } catch (AdminException.TextFieldNullException e) {
-            new Admin().showMessage("修改失败", "修改不能为空", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("修改失败", "修改不能为空", Alert.AlertType.ERROR, 0);
         } catch (AdminException.ModifyException e) {
-            new Admin().showMessage("修改异常", "修改失败,请重新修改", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("修改异常", "修改失败,请重新修改", Alert.AlertType.ERROR, 0);
         }
 
     }

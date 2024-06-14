@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.student;
 
-import com.secwsystem.app.Student;
+import com.secwsystem.app.StudentApplication;
 import com.secwsystem.dao.impl.StudentDAO;
 import com.secwsystem.dao.pojo.StudentPrivate;
 import javafx.fxml.FXML;
@@ -42,7 +42,7 @@ public class StudentChangePassword {
             if(a_new_password.getText().trim().isEmpty()){
                 throw new StudentException.PasswordNullException();
             }
-            if(new Student().showMessage("提示","确定修改密码？", Alert.AlertType.CONFIRMATION,1)){
+            if(new StudentApplication().showMessage("提示","确定修改密码？", Alert.AlertType.CONFIRMATION,1)){
                 //将新密码上传到数据库
                 StudentLogin controller = (StudentLogin) StudentContext.controllers.get(StudentLogin.class.getSimpleName());
                 StudentDAO studentDAO = new StudentDAO();
@@ -50,16 +50,16 @@ public class StudentChangePassword {
                 studentPrivate.setSPassword(a_new_password.getText());
                 if(studentDAO.updatePrivate(studentPrivate)){
                     //生成提示界面，关闭本界面
-                    new Student().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);
+                    new StudentApplication().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);
                     stage.close();
                 }else{
                     throw new com.secwsystem.ctrl.student.StudentException.ChangePasswordException();
                 }
             }
         } catch (StudentException.PasswordNullException e) {
-            new Student().showMessage("密码修改失败","新密码不能为空", Alert.AlertType.ERROR,0);
+            new StudentApplication().showMessage("密码修改失败","新密码不能为空", Alert.AlertType.ERROR,0);
         } catch (StudentException.ChangePasswordException e) {
-            new Student().showMessage("密码修改失败","密码修改失败", Alert.AlertType.ERROR,0);
+            new StudentApplication().showMessage("密码修改失败","密码修改失败", Alert.AlertType.ERROR,0);
         }
     }
 

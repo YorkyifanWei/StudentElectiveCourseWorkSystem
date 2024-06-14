@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.CourseDAO;
 import com.secwsystem.dao.pojo.Course;
 import javafx.fxml.FXML;
@@ -115,17 +115,17 @@ public class AddCourse {
             if(courseDAO.addCourse(course)){
                 AdminMainController controller = (AdminMainController) AdminContext.controllers.get(AdminMainController.class.getSimpleName());
                 controller.AddCourseToTable(course);
-                new Admin().showMessage("创建成功","课程创建成功！", Alert.AlertType.INFORMATION,0);
+                new AdminApplication().showMessage("创建成功","课程创建成功！", Alert.AlertType.INFORMATION,0);
                 stage.close();
             }else {
                 throw new AdminException.AddException();
             }
         } catch (AdminException.TextFieldNullException e) {
-            new Admin().showMessage("创建失败","请检查输入信息是否为空！", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("创建失败","请检查输入信息是否为空！", Alert.AlertType.ERROR,0);
         } catch (AdminException.CourseExistException e) {
-            new Admin().showMessage("创建失败","该课程已存在！", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("创建失败","该课程已存在！", Alert.AlertType.ERROR,0);
         } catch (AdminException.AddException e) {
-            new Admin().showMessage("创建异常","课程创建失败,请重新尝试！", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("创建异常","课程创建失败,请重新尝试！", Alert.AlertType.ERROR,0);
         }
     }
 

@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.student;
 
-import com.secwsystem.app.Student;
+import com.secwsystem.app.StudentApplication;
 import com.secwsystem.dao.impl.StudentDAO;
 import com.secwsystem.dao.pojo.StudentPrivate;
 import javafx.fxml.FXML;
@@ -42,7 +42,7 @@ public class StudentChangePhoneNumber {
             if(a_new_phonenumber.getText().trim().isEmpty()){
                 throw new StudentException.PasswordNullException();
             }
-            if(new Student().showMessage("提示","确定修改手机号？", Alert.AlertType.CONFIRMATION,1)){
+            if(new StudentApplication().showMessage("提示","确定修改手机号？", Alert.AlertType.CONFIRMATION,1)){
                 //将新手机号上传到数据库
                 StudentLogin controller = (StudentLogin) StudentContext.controllers.get(StudentLogin.class.getSimpleName());
                 StudentDAO studentDAO = new StudentDAO();
@@ -50,7 +50,7 @@ public class StudentChangePhoneNumber {
                 studentPrivate.setSPhoneNumber(a_new_phonenumber.getText());
                 if(studentDAO.updatePrivate(studentPrivate)){
                     //生成提示界面，关闭本界面
-                    new Student().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);
+                    new StudentApplication().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);
                     stage.close();
                 }else{
                     throw new com.secwsystem.ctrl.student.StudentException.ChangePasswordException();
@@ -58,9 +58,9 @@ public class StudentChangePhoneNumber {
 
             }
         } catch (StudentException.PasswordNullException e) {
-            new Student().showMessage("手机号修改失败","新手机号不能为空", Alert.AlertType.ERROR,0);
+            new StudentApplication().showMessage("手机号修改失败","新手机号不能为空", Alert.AlertType.ERROR,0);
         } catch (StudentException.ChangePasswordException e) {
-            new Student().showMessage("手机号修改失败","数据库错误", Alert.AlertType.ERROR,0);
+            new StudentApplication().showMessage("手机号修改失败","数据库错误", Alert.AlertType.ERROR,0);
         }
     }
 

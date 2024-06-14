@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.student;
 
-import com.secwsystem.app.Student;
+import com.secwsystem.app.StudentApplication;
 import com.secwsystem.dao.impl.CourseDAO;
 import com.secwsystem.dao.impl.StudentDAO;
 import com.secwsystem.dao.pojo.Course;
@@ -175,18 +175,18 @@ public class StudentMainController implements Initializable {
 
     @FXML
     void change_email_event() throws IOException{
-        new Student().ChangeEmail();
+        new StudentApplication().ChangeEmail();
     }
 
     @FXML
     void change_password_event() throws IOException {
-        new Student().ChangePassword();
+        new StudentApplication().ChangePassword();
 
     }
 
     @FXML
     void change_phonenumber_event() throws IOException{
-        new Student().ChangePhonenumber();
+        new StudentApplication().ChangePhonenumber();
     }
 
     @FXML
@@ -194,15 +194,15 @@ public class StudentMainController implements Initializable {
         Course course = tableview1.getSelectionModel().getSelectedItem();
         int index = tableview1.getSelectionModel().getSelectedIndex();
         if(index < 0){
-            new Student().showMessage("提示", "请选择课程", Alert.AlertType.WARNING, 0);
+            new StudentApplication().showMessage("提示", "请选择课程", Alert.AlertType.WARNING, 0);
         }
         if(course.addStudent(a_main_sid.getText())){
-            new Student().showMessage("提示", "选课成功", Alert.AlertType.INFORMATION, 0);
+            new StudentApplication().showMessage("提示", "选课成功", Alert.AlertType.INFORMATION, 0);
             tableview11.getItems().add(course);
             tableview1.refresh();
             new CourseDAO().addStudent(course.getCid(), a_main_sid.getText().trim());
         }else{
-            new Student().showMessage("提示", "选课失败", Alert.AlertType.WARNING, 0);
+            new StudentApplication().showMessage("提示", "选课失败", Alert.AlertType.WARNING, 0);
         }
 
     }
@@ -212,16 +212,16 @@ public class StudentMainController implements Initializable {
         Course course = tableview11.getSelectionModel().getSelectedItem();
         int index = tableview11.getSelectionModel().getSelectedIndex();
         if(index < 0){
-            new Student().showMessage("提示", "请选择课程", Alert.AlertType.WARNING, 0);
+            new StudentApplication().showMessage("提示", "请选择课程", Alert.AlertType.WARNING, 0);
         }
         if(course.deleteStudent(a_main_sid.getText())){
-            new Student().showMessage("提示", "退课成功", Alert.AlertType.INFORMATION, 0);
+            new StudentApplication().showMessage("提示", "退课成功", Alert.AlertType.INFORMATION, 0);
             tableview11.getItems().remove(index);
             new CourseDAO().deleteStudent(course.getCid(), a_main_sid.getText().trim());
             tableview1.refresh();
             tableview11.refresh();
         }else{
-            new Student().showMessage("提示", "退课失败", Alert.AlertType.WARNING, 0);
+            new StudentApplication().showMessage("提示", "退课失败", Alert.AlertType.WARNING, 0);
         }
 
 

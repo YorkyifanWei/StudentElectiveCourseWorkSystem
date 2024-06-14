@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.teacher;
 
-import com.secwsystem.app.Teacher;
+import com.secwsystem.app.TeacherApplication;
 import com.secwsystem.dao.impl.CourseDAO;
 import com.secwsystem.dao.pojo.Course;
 import javafx.fxml.FXML;
@@ -97,12 +97,12 @@ public class TeacherAddCourse {
             course.setCCapacity(CouCapacity.getText().trim());
             course.setCCurrent("0");
             course.addStudent(null);
-            new Teacher().showMessage("提示","课程创建成功！", Alert.AlertType.INFORMATION,0);
+            new TeacherApplication().showMessage("提示","课程创建成功！", Alert.AlertType.INFORMATION,0);
             stage.close();
         } catch (TeacherException.TextFieldIsNullException e) {
-            new Teacher().showMessage("提示","请检查输入信息是否为空！", Alert.AlertType.INFORMATION,0);
+            new TeacherApplication().showMessage("提示","请检查输入信息是否为空！", Alert.AlertType.INFORMATION,0);
         } catch (TeacherException.CourseExistException e) {
-            new Teacher().showMessage("提示","课程已存在！", Alert.AlertType.INFORMATION,0);
+            new TeacherApplication().showMessage("提示","课程已存在！", Alert.AlertType.INFORMATION,0);
         }
     }
 

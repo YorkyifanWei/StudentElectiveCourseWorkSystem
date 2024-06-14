@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.AdminDAO;
 import com.secwsystem.dao.pojo.AdminPrivate;
 import javafx.fxml.FXML;
@@ -43,7 +43,7 @@ public class AdminChangePassword{
             if(a_new_password.getText().trim().isEmpty()){
                 throw new AdminException.PasswordNullException();
             }
-            if(new Admin().showMessage("提示","确定修改密码？", Alert.AlertType.CONFIRMATION,1)){
+            if(new AdminApplication().showMessage("提示","确定修改密码？", Alert.AlertType.CONFIRMATION,1)){
                 //将新密码上传到数据库
                 AdminLogin controller = (AdminLogin) AdminContext.controllers.get(AdminLogin.class.getSimpleName());
                 AdminDAO adminDAO = new AdminDAO();
@@ -51,7 +51,7 @@ public class AdminChangePassword{
                 adminPrivate.setAPassword(a_new_password.getText());
                 if(adminDAO.updatePrivate(adminPrivate)){
                     //生成提示界面，关闭本界面
-                    new Admin().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);
+                    new AdminApplication().showMessage("提示","密码修改成功", Alert.AlertType.INFORMATION,0);
                     stage.close();
                 }else{
                     throw new AdminException.ChangePasswordException();
@@ -60,9 +60,9 @@ public class AdminChangePassword{
             }
         } catch (AdminException.PasswordNullException e) {
             //抛出错误界面
-            new Admin().showMessage("密码修改失败","新密码不能为空", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("密码修改失败","新密码不能为空", Alert.AlertType.ERROR,0);
         } catch (AdminException.ChangePasswordException e) {
-            new Admin().showMessage("密码修改失败","密码修改失败,请重新修改", Alert.AlertType.ERROR,0);
+            new AdminApplication().showMessage("密码修改失败","密码修改失败,请重新修改", Alert.AlertType.ERROR,0);
         }
     }
 

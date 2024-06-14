@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.TeacherDAO;
 import com.secwsystem.dao.pojo.Course;
 import com.secwsystem.dao.pojo.TeacherPrivate;
@@ -86,7 +86,7 @@ public class GetTeachersFromCourse implements Initializable {
 
     @FXML
     void AddEvent() throws IOException {
-        new Admin().addTeacherIntoCourse();
+        new AdminApplication().addTeacherIntoCourse();
     }
 
     @FXML
@@ -98,24 +98,24 @@ public class GetTeachersFromCourse implements Initializable {
             if(index < 0){
                 throw new AdminException.NoSelectionException();
             }
-            if(new Admin().showMessage("提示", "是否删除该教师", Alert.AlertType.CONFIRMATION, 1)){
+            if(new AdminApplication().showMessage("提示", "是否删除该教师", Alert.AlertType.CONFIRMATION, 1)){
                 if(teacherDAO.delete(teacher.getTid())){
                     TeasFromCouTable.getItems().remove(index);
-                    new Admin().showMessage("提示", "删除成功", Alert.AlertType.INFORMATION, 0);
+                    new AdminApplication().showMessage("提示", "删除成功", Alert.AlertType.INFORMATION, 0);
                 }else {
                     throw new AdminException.DeleteException();
                 }
             }
         } catch (AdminException.NoSelectionException e) {
-            new Admin().showMessage("提示", "请选择要删除的教师", Alert.AlertType.WARNING, 0);
+            new AdminApplication().showMessage("提示", "请选择要删除的教师", Alert.AlertType.WARNING, 0);
         } catch (AdminException.DeleteException e) {
-            new Admin().showMessage("删除异常", "删除失败,请重新删除", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("删除异常", "删除失败,请重新删除", Alert.AlertType.ERROR, 0);
         }
     }
 
     @FXML
     void GetTeaFromCouEvent() throws IOException {
-        new Admin().getTeacherFromCourse();
+        new AdminApplication().getTeacherFromCourse();
     }
 
     TeacherPrivate getTeaFromCou(){

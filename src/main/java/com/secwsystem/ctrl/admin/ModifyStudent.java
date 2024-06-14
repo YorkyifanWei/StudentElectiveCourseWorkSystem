@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.StudentDAO;
 import com.secwsystem.dao.pojo.StudentPrivate;
 import javafx.fxml.FXML;
@@ -101,15 +101,15 @@ public class ModifyStudent implements Initializable{
             student.setSEntertime(StuEntertime.getText().trim());
             if (studentDAO.updatePrivate(student)) {
                 controller.ModifyStuToTable(student);
-                new Admin().showMessage("修改成功", "修改成功", Alert.AlertType.INFORMATION, 0);
+                new AdminApplication().showMessage("修改成功", "修改成功", Alert.AlertType.INFORMATION, 0);
                 stage.close();
             } else {
                 throw new AdminException.ModifyException();
             }
         } catch (AdminException.TextFieldNullException e) {
-            new Admin().showMessage("修改失败", "修改不能为空", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("修改失败", "修改不能为空", Alert.AlertType.ERROR, 0);
         } catch (AdminException.ModifyException e) {
-            new Admin().showMessage("修改异常", "修改异常,请重新修改", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("修改异常", "修改异常,请重新修改", Alert.AlertType.ERROR, 0);
         }
     }
     boolean TextFieldIsNull() {

@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.CourseDAO;
 import com.secwsystem.dao.impl.TeacherDAO;
 import com.secwsystem.dao.pojo.Course;
@@ -55,17 +55,17 @@ public class AddTeacherIntoCourse {
                 GetTeachersFromCourse getTeasFromCouController = (GetTeachersFromCourse) AdminContext.controllers.get("GetTeasFromCouController");
                 TeacherPrivate teacher = teacherDAO.getPrivate(a_TeaInCou.getText().trim());
                 getTeasFromCouController.AddTeaToTable(teacher);
-                new Admin().showMessage("添加成功", "添加成功", Alert.AlertType.INFORMATION, 0);
+                new AdminApplication().showMessage("添加成功", "添加成功", Alert.AlertType.INFORMATION, 0);
                 stage.close();
             }else{
                 throw new AdminException.AddException();
             }
         } catch (AdminException.TextFieldNullException e) {
-            new Admin().showMessage("添加失败", "教师账号名不可为空", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("添加失败", "教师账号名不可为空", Alert.AlertType.ERROR, 0);
         } catch (AdminException.TeacherNotExistException e) {
-            new Admin().showMessage("添加失败", "教师不存在", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("添加失败", "教师不存在", Alert.AlertType.ERROR, 0);
         }catch(AdminException.AddException e){
-            new Admin().showMessage("添加失败", "添加失败,请重新添加", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("添加失败", "添加失败,请重新添加", Alert.AlertType.ERROR, 0);
         }
 
     }

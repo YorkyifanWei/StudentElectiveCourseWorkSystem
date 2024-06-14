@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.student;
 
-import com.secwsystem.app.Student;
+import com.secwsystem.app.StudentApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -59,11 +59,11 @@ public class StudentLogin implements Initializable {
                //throw new Exception.PasswordErrorException();
            // }
             stage.close();
-            new Student().MainApp();
+            new StudentApplication().MainApp();
         }catch(StudentException.IdNullException e){
-            new Student().showMessage("登录异常","账号名不能为空!", Alert.AlertType.ERROR,0);
+            new StudentApplication().showMessage("登录异常","账号名不能为空!", Alert.AlertType.ERROR,0);
         }catch (StudentException.PasswordNullException e){
-            new Student().showMessage("登录异常","密码不能为空!", Alert.AlertType.ERROR,0);
+            new StudentApplication().showMessage("登录异常","密码不能为空!", Alert.AlertType.ERROR,0);
         }/*catch(Exception.IdNotExistException e){
             new Admin().showMessage("登录异常","账号不存在!", Alert.AlertType.ERROR,0);
         }catch(Exception.PasswordErrorException e){

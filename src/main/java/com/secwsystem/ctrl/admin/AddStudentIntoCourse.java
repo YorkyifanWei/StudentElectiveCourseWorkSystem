@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.CourseDAO;
 import com.secwsystem.dao.impl.StudentDAO;
 import com.secwsystem.dao.pojo.Course;
@@ -75,20 +75,20 @@ public class AddStudentIntoCourse {
                 // 将学生添加到学生列表
                 getStusFromCouController.AddStuToTable(student);
                 // 显示添加成功的提示
-                new Admin().showMessage("添加成功", "添加成功", Alert.AlertType.INFORMATION, 0);
+                new AdminApplication().showMessage("添加成功", "添加成功", Alert.AlertType.INFORMATION, 0);
                 stage.close();
             } else {
                 throw new AdminException.AddException();
             }
         } catch (AdminException.TextFieldNullException e) {
             // 显示输入为空的错误提示
-            new Admin().showMessage("添加失败", "学生账号名不可为空", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("添加失败", "学生账号名不可为空", Alert.AlertType.ERROR, 0);
         } catch (AdminException.TeacherNotExistException e) {
             // 显示学生不存在的错误提示
-            new Admin().showMessage("添加失败", "学生不存在", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("添加失败", "学生不存在", Alert.AlertType.ERROR, 0);
         } catch (AdminException.AddException e) {
             // 显示添加失败的错误提示
-            new Admin().showMessage("添加失败", "添加失败,请查看课程是否已满", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("添加失败", "添加失败,请查看课程是否已满", Alert.AlertType.ERROR, 0);
         }
     }
 

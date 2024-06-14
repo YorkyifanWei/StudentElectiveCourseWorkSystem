@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.AdminDAO;
 import com.secwsystem.dao.impl.CourseDAO;
 import com.secwsystem.dao.impl.StudentDAO;
@@ -209,7 +209,7 @@ public class AdminMainController implements Initializable {
 
     @FXML
     void AlterEvent() throws IOException {
-        new Admin().changePassword();
+        new AdminApplication().changePassword();
     }
 
     //初始化所有子界面的可视化状态
@@ -257,13 +257,13 @@ public class AdminMainController implements Initializable {
     @FXML
     void AddEvent() throws IOException {
         if (CouTable.isVisible()) {
-            new Admin().addCourse();
+            new AdminApplication().addCourse();
         }
         if (TeaTable.isVisible()) {
-            new Admin().addTeacher();
+            new AdminApplication().addTeacher();
         }
         if (StuTable.isVisible()) {
-            new Admin().addStudent();
+            new AdminApplication().addStudent();
         }
     }
 
@@ -286,11 +286,11 @@ public class AdminMainController implements Initializable {
                 if (index < 0) {
                     throw new AdminException.NoSelectionException();
                 }
-                if (new Admin().showMessage("删除确认", "你确定删除" + course.getCName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
+                if (new AdminApplication().showMessage("删除确认", "你确定删除" + course.getCName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
                     if (new CourseDAO().deleteCourse(course)) {
                         CouTable.getItems().remove(index);
                         CouTable.refresh();
-                        new Admin().showMessage("删除成功", "删除成功", Alert.AlertType.INFORMATION, 0);
+                        new AdminApplication().showMessage("删除成功", "删除成功", Alert.AlertType.INFORMATION, 0);
                     } else {
                         throw new AdminException.DeleteException();
                     }
@@ -302,11 +302,11 @@ public class AdminMainController implements Initializable {
                 if (index < 0) {
                     throw new AdminException.NoSelectionException();
                 }
-                if (new Admin().showMessage("删除确认", "你确定删除" + teacher.getTName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
+                if (new AdminApplication().showMessage("删除确认", "你确定删除" + teacher.getTName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
                     if (new TeacherDAO().delete(teacher.getTid())) {
                         TeaTable.getItems().remove(index);
                         TeaTable.refresh();
-                        new Admin().showMessage("删除成功", "删除成功", Alert.AlertType.INFORMATION, 0);
+                        new AdminApplication().showMessage("删除成功", "删除成功", Alert.AlertType.INFORMATION, 0);
                     } else {
                         throw new AdminException.DeleteException();
                     }
@@ -318,33 +318,33 @@ public class AdminMainController implements Initializable {
                 if (index < 0) {
                     throw new AdminException.NoSelectionException();
                 }
-                if (new Admin().showMessage("删除确认", "你确定删除" + student.getSName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
+                if (new AdminApplication().showMessage("删除确认", "你确定删除" + student.getSName() + "吗？", Alert.AlertType.CONFIRMATION, 1)) {
                     if (new StudentDAO().delete(student.getSid())) {
                         StuTable.getItems().remove(index);
                         StuTable.refresh();
-                        new Admin().showMessage("删除成功", "删除成功", Alert.AlertType.INFORMATION, 0);
+                        new AdminApplication().showMessage("删除成功", "删除成功", Alert.AlertType.INFORMATION, 0);
                     } else {
                         throw new AdminException.DeleteException();
                     }
                 }
             }
         } catch (AdminException.NoSelectionException e) {
-            new Admin().showMessage("提示", "请选择要删除的对象", Alert.AlertType.WARNING, 0);
+            new AdminApplication().showMessage("提示", "请选择要删除的对象", Alert.AlertType.WARNING, 0);
         } catch (AdminException.DeleteException e) {
-            new Admin().showMessage("删除失败", "删除失败，请重试", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("删除失败", "删除失败，请重试", Alert.AlertType.ERROR, 0);
         }
     }
 
     @FXML
     void ModifyEvent() throws IOException {
         if (CouTable.isVisible()) {
-            new Admin().modifyCourse();
+            new AdminApplication().modifyCourse();
         }
         if (TeaTable.isVisible()) {
-            new Admin().modifyTeacher();
+            new AdminApplication().modifyTeacher();
         }
         if (StuTable.isVisible()) {
-            new Admin().modifyStudent();
+            new AdminApplication().modifyStudent();
         }
     }
 
@@ -371,13 +371,13 @@ public class AdminMainController implements Initializable {
     @FXML
     void GetEvent() throws IOException {
         if (CouTable.isVisible()){
-            new Admin().getCourse();
+            new AdminApplication().getCourse();
         }
         if (TeaTable.isVisible()){
-            new Admin().getTeacher();
+            new AdminApplication().getTeacher();
         }
         if (StuTable.isVisible()){
-            new Admin().getStudent();
+            new AdminApplication().getStudent();
         }
     }
 

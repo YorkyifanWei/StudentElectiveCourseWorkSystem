@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.teacher;
 
-import com.secwsystem.app.Teacher;
+import com.secwsystem.app.TeacherApplication;
 import com.secwsystem.dao.impl.CourseDAO;
 import com.secwsystem.dao.impl.TeacherDAO;
 import com.secwsystem.dao.pojo.Course;
@@ -177,28 +177,28 @@ public class TeacherMainController implements Initializable {
 
     @FXML
     void change_email_event() throws IOException {
-        new Teacher().ChangeEmail();
+        new TeacherApplication().ChangeEmail();
     }
 
     @FXML
     void change_password_event() throws IOException {
-        new Teacher().ChangePassword();
+        new TeacherApplication().ChangePassword();
 
     }
 
 
     @FXML
     void change_phonenumber_event() throws IOException {
-        new Teacher().ChangePhonenumber();
+        new TeacherApplication().ChangePhonenumber();
     }
 
     @FXML
     public void change_address_event() throws IOException {
-        new Teacher().ChangeAddress();
+        new TeacherApplication().ChangeAddress();
     }
 
     public void teacher_add_course_event() throws IOException {
-        new Teacher().AddCourse();
+        new TeacherApplication().AddCourse();
     }
 
     @Override

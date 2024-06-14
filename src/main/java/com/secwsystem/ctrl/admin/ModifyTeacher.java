@@ -1,6 +1,6 @@
 package com.secwsystem.ctrl.admin;
 
-import com.secwsystem.app.Admin;
+import com.secwsystem.app.AdminApplication;
 import com.secwsystem.dao.impl.TeacherDAO;
 import com.secwsystem.dao.pojo.TeacherPrivate;
 import javafx.fxml.FXML;
@@ -102,15 +102,15 @@ public class ModifyTeacher implements Initializable{
             teacher.setTAddress(TeaAddress.getText().trim());
             if(teacherDAO.updatePrivate(teacher)){
                 controller.ModifyTeaToTable(teacher);
-                new Admin().showMessage("修改成功", "修改成功", Alert.AlertType.INFORMATION, 0);
+                new AdminApplication().showMessage("修改成功", "修改成功", Alert.AlertType.INFORMATION, 0);
                 stage.close();
             }else{
                 throw new AdminException.ModifyException();
             }
         } catch (AdminException.TextFieldNullException e) {
-            new Admin().showMessage("修改失败", "请将信息填写完整", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("修改失败", "请将信息填写完整", Alert.AlertType.ERROR, 0);
         } catch (AdminException.ModifyException e) {
-            new Admin().showMessage("修改异常", "修改失败,请重新修改", Alert.AlertType.ERROR, 0);
+            new AdminApplication().showMessage("修改异常", "修改失败,请重新修改", Alert.AlertType.ERROR, 0);
         }
     }
 
