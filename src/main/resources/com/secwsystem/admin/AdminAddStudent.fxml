@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="645.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.AddStuController">
+<AnchorPane prefHeight="645.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.AddStudent">
    <children>
       <Label layoutX="32.0" layoutY="28.0" prefHeight="37.0" prefWidth="63.0" text="学号：">
          <font>
@@ -62,12 +62,12 @@
       <TextField fx:id="StuSchool" layoutX="82.0" layoutY="355.0" prefHeight="23.0" prefWidth="327.0" />
       <TextField fx:id="StuClass" layoutX="85.0" layoutY="403.0" prefHeight="23.0" prefWidth="327.0" />
       <TextField fx:id="StuEmail" layoutX="82.0" layoutY="501.0" prefHeight="23.0" prefWidth="327.0" />
-      <Button fx:id="btn_set" layoutX="96.0" layoutY="544.0" mnemonicParsing="false" onAction="#SetEvent" prefHeight="39.0" prefWidth="72.0" text="确定">
+      <Button fx:id="btn_set" layoutX="96.0" layoutY="544.0" mnemonicParsing="false" onAction="#setEvent" prefHeight="39.0" prefWidth="72.0" text="确定">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="btn_cancel" layoutX="255.0" layoutY="544.0" mnemonicParsing="false" onAction="#CancelEvent" prefHeight="39.0" prefWidth="64.0" text="取消">
+      <Button fx:id="btn_cancel" layoutX="255.0" layoutY="544.0" mnemonicParsing="false" onAction="#cancelEvent" prefHeight="39.0" prefWidth="64.0" text="取消">
          <font>
             <Font size="19.0" />
          </font>

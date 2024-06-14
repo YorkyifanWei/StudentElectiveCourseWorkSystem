@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="726.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.GetCouController">
+<AnchorPane prefHeight="726.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.GetCourse">
     <children>
         <Label alignment="CENTER" layoutX="31.0" layoutY="30.0" prefHeight="34.0" prefWidth="58.0" text="编号：">
             <font>
@@ -57,12 +57,12 @@
         <TextField fx:id="CouSchool" editable="false" layoutX="123.0" layoutY="337.0" prefHeight="23.0" prefWidth="271.0" />
         <TextField fx:id="CouPeriod" editable="false" layoutX="89.0" layoutY="379.0" prefHeight="23.0" prefWidth="307.0" />
         <TextField fx:id="CouCurrent" editable="false" layoutX="126.0" layoutY="424.0" prefHeight="23.0" prefWidth="271.0" />
-        <Button fx:id="btn_getTeas" layoutX="44.0" layoutY="647.0" mnemonicParsing="false" onAction="#GetTeasEvent" prefHeight="39.0" prefWidth="151.0" text="查看课下讲师">
+        <Button fx:id="btn_getTeas" layoutX="44.0" layoutY="647.0" mnemonicParsing="false" onAction="#getTeachersEvent" prefHeight="39.0" prefWidth="151.0" text="查看课下讲师">
             <font>
                 <Font size="19.0" />
             </font>
         </Button>
-        <Button fx:id="btn_getStus" layoutX="236.0" layoutY="647.0" mnemonicParsing="false" onAction="#GetStusEvent" prefHeight="39.0" prefWidth="151.0" text="查看课下学生">
+        <Button fx:id="btn_getStus" layoutX="236.0" layoutY="647.0" mnemonicParsing="false" onAction="#getStudentsEvent" prefHeight="39.0" prefWidth="151.0" text="查看课下学生">
             <font>
                 <Font size="19.0" />
             </font>

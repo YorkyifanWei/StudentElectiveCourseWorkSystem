@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="221.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.AddStuInCouController">
+<AnchorPane prefHeight="221.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.AddStudentIntoCourse">
    <children>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="574.0" text="请输入想要添加的学生：">
          <font>
@@ -14,12 +14,12 @@
          </font>
       </Label>
       <TextField fx:id="a_StuInCou" layoutX="13.0" layoutY="70.0" prefHeight="55.0" prefWidth="574.0" />
-      <Button fx:id="btn_set" layoutX="96.0" layoutY="151.0" mnemonicParsing="false" onAction="#SetEvent" prefHeight="39.0" prefWidth="68.0" text="确认">
+      <Button fx:id="btn_set" layoutX="96.0" layoutY="151.0" mnemonicParsing="false" onAction="#setEvent" prefHeight="39.0" prefWidth="68.0" text="确认">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="btn_cancel" layoutX="400.0" layoutY="151.0" mnemonicParsing="false" onAction="#CancelEvent" text="取消">
+      <Button fx:id="btn_cancel" layoutX="400.0" layoutY="151.0" mnemonicParsing="false" onAction="#cancelEvent" text="取消">
          <font>
             <Font size="19.0" />
          </font>

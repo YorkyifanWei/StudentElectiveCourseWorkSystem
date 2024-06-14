@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="786.0" prefWidth="1111.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.MainController">
+<AnchorPane prefHeight="786.0" prefWidth="1111.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.AdminMainController">
    <children>
       <VBox prefHeight="717.0" prefWidth="167.0">
          <children>
@@ -30,7 +30,7 @@
                </font>
             </Label>
             <TextField fx:id="a_main_name" editable="false" prefHeight="33.0" prefWidth="167.0" />
-            <Button fx:id="btn_alter" mnemonicParsing="false" onAction="#AlterEvent" prefHeight="37.0" prefWidth="86.0" text="修改密码">
+            <Button fx:id="btn_alter" mnemonicParsing="false" onAction="#alterEvent" prefHeight="37.0" prefWidth="86.0" text="修改密码">
                <font>
                   <Font size="15.0" />
                </font>
@@ -42,17 +42,17 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <Button fx:id="btn_course" layoutX="167.0" layoutY="42.0" mnemonicParsing="false" onAction="#CourseEvent" prefHeight="29.0" prefWidth="57.0" text="课程">
+      <Button fx:id="btn_course" layoutX="167.0" layoutY="42.0" mnemonicParsing="false" onAction="#courseEvent" prefHeight="29.0" prefWidth="57.0" text="课程">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btn_stu" layoutX="222.0" layoutY="42.0" mnemonicParsing="false" onAction="#StuEvent" prefHeight="29.0" prefWidth="52.0" text="学生">
+      <Button fx:id="btn_stu" layoutX="222.0" layoutY="42.0" mnemonicParsing="false" onAction="#studentEvent" prefHeight="29.0" prefWidth="52.0" text="学生">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btn_tea" layoutX="271.0" layoutY="42.0" mnemonicParsing="false" onAction="#TeaEvent" prefHeight="29.0" prefWidth="52.0" text="老师">
+      <Button fx:id="btn_tea" layoutX="271.0" layoutY="42.0" mnemonicParsing="false" onAction="#teacherEvent" prefHeight="29.0" prefWidth="52.0" text="老师">
          <font>
             <Font size="14.0" />
          </font>
@@ -72,7 +72,7 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Button fx:id="btn_add" layoutX="657.0" layoutY="42.0" mnemonicParsing="false" onAction="#AddEvent" prefHeight="29.0" prefWidth="52.0" text="增加" visible="false" />
+      <Button fx:id="btn_add" layoutX="657.0" layoutY="42.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="29.0" prefWidth="52.0" text="增加" visible="false" />
       <TableView fx:id="CouTable" layoutX="176.0" layoutY="118.0" prefHeight="641.0" prefWidth="922.0" visible="false">
         <columns>
           <TableColumn fx:id="CouId" prefWidth="73.66668701171875" sortable="false" text="编号" />
@@ -106,8 +106,8 @@
             <TableColumn fx:id="StuEmail" prefWidth="251.3333740234375" sortable="false" text="邮箱" />
         </columns>
       </TableView>
-      <Button fx:id="btn_delete" layoutX="709.0" layoutY="42.0" mnemonicParsing="false" onAction="#DeleteEvent" prefHeight="29.0" prefWidth="55.0" text="删除" visible="false" />
-      <Button fx:id="btn_modify" layoutX="764.0" layoutY="42.0" mnemonicParsing="false" onAction="#ModifyEvent" prefHeight="29.0" prefWidth="55.0" text="修改" visible="false" />
-      <Button fx:id="btn_get" layoutX="819.0" layoutY="42.0" mnemonicParsing="false" onAction="#GetEvent" prefHeight="29.0" prefWidth="55.0" text="查看" visible="false" />
+      <Button fx:id="btn_delete" layoutX="709.0" layoutY="42.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="29.0" prefWidth="55.0" text="删除" visible="false" />
+      <Button fx:id="btn_modify" layoutX="764.0" layoutY="42.0" mnemonicParsing="false" onAction="#modifyEvent" prefHeight="29.0" prefWidth="55.0" text="修改" visible="false" />
+      <Button fx:id="btn_get" layoutX="819.0" layoutY="42.0" mnemonicParsing="false" onAction="#getEvent" prefHeight="29.0" prefWidth="55.0" text="查看" visible="false" />
    </children>
 </AnchorPane>

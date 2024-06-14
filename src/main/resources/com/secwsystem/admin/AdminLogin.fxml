@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.AdminLoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.AdminLogin">
    <children>
       <TextField fx:id="a_login_aid" layoutX="248.0" layoutY="136.0" prefHeight="51.0" prefWidth="293.0" />
       <PasswordField fx:id="a_login_password" layoutX="248.0" layoutY="214.0" prefHeight="51.0" prefWidth="293.0" />
@@ -23,7 +23,7 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <Button fx:id="btn_login" layoutX="362.0" layoutY="296.0" mnemonicParsing="false" onAction="#LoginEvent" prefHeight="41.0" prefWidth="66.0" text="登录">
+      <Button fx:id="btn_login" layoutX="362.0" layoutY="296.0" mnemonicParsing="false" onAction="#loginEvent" prefHeight="41.0" prefWidth="66.0" text="登录">
          <font>
             <Font size="19.0" />
          </font>

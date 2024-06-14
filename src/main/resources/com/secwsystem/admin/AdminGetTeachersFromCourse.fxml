@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="604.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.GetTeasFromCouController">
+<AnchorPane prefHeight="604.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.admin.GetTeachersFromCourse">
    <children>
       <TableView fx:id="TeasFromCouTable" layoutX="28.0" layoutY="58.0" prefHeight="464.0" prefWidth="746.0">
         <columns>
@@ -24,17 +24,17 @@
          <font>
             <Font size="19.0" />
          </font></Label>
-      <Button fx:id="btn_add" layoutX="125.0" layoutY="537.0" mnemonicParsing="false" onAction="#AddEvent" prefHeight="40.0" prefWidth="80.0" text="增加">
+      <Button fx:id="btn_add" layoutX="125.0" layoutY="537.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="40.0" prefWidth="80.0" text="增加">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="btn_delete" layoutX="356.0" layoutY="537.0" mnemonicParsing="false" onAction="#DeleteEvent" prefHeight="40.0" prefWidth="73.0" text="删除">
+      <Button fx:id="btn_delete" layoutX="356.0" layoutY="537.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="40.0" prefWidth="73.0" text="删除">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="btn_get" layoutX="600.0" layoutY="537.0" mnemonicParsing="false" onAction="#GetTeaFromCouEvent" prefHeight="40.0" prefWidth="73.0" text="查看">
+      <Button fx:id="btn_get" layoutX="600.0" layoutY="537.0" mnemonicParsing="false" onAction="#getTeacherFromCourseEvent" prefHeight="40.0" prefWidth="73.0" text="查看">
          <font>
             <Font size="19.0" />
          </font>
