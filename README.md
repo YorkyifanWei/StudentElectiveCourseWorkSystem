@@ -5,10 +5,10 @@
 本项目是一个采用JavaFX技术构建的桌面应用，集成了Maven作为项目管理工具，旨在通过模拟真实的学校选课流程，提供一个全面的学生、教师及管理员三方课程操作平台。系统后端依托于MySQL数据库，确保数据处理的高效与安全。
 
 ## 核心贡献者
-<!-- TODO 修改贡献者列表 -->
-- **后端开发者**：[邱健珏，YorkyifanWei]
-- **前端开发者**：[super-chickenman，吕祖灿]
-- **文档撰写**：[邱健珏，YorkyifanWei]
+
+- **后端开发者**：[JosephJellaswillQiu，YorkyifanWei]
+- **前端开发者**：[super-chickenman，Lvvvvvvvzc]
+- **文档撰写**：[JosephJellaswillQiu，YorkyifanWei]
 
 ## 技术架构
 
