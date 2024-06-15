@@ -18,17 +18,19 @@ import java.util.Optional;
  */
 public class TeacherApplication extends Application {
 
-/**
- * 程序的入口点。
- * 调用launch方法启动应用程序，传入命令行参数args。
- * @param args 命令行参数，用于传递给应用程序的启动参数。
- */
-public static void main(String[] args) {
-    launch(args);
-}
+    /**
+     * 程序的入口点。
+     * 调用launch方法启动应用程序，传入命令行参数args。
+     * 
+     * @param args 命令行参数，用于传递给应用程序的启动参数。
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     /**
      * 当应用程序启动时，此方法被调用以初始化登录过程。
+     * 
      * @param primaryStage 应用程序的主要舞台，此处未使用但必须传递以符合接口要求。
      */
     @Override
@@ -47,7 +49,8 @@ public static void main(String[] args) {
             // 创建FXMLLoader实例，用于加载FXML文件
             FXMLLoader loader = new FXMLLoader();
             // 设置FXML文件的位置，使用相对路径从当前类的资源中加载
-            loader.setLocation(getClass().getResource("/com/secwsystem/teacher/login_manager.fxml"));
+            loader.setLocation(getClass()
+                    .getResource("/com/secwsystem/teacher/login_manager.fxml"));
             // 加载FXML文件，返回界面的根节点
             AnchorPane root = loader.load();
             // 创建一个新的场景，将加载的界面作为其内容
@@ -83,7 +86,8 @@ public static void main(String[] args) {
         // 创建FXMLLoader对象，用于加载界面布局文件。
         FXMLLoader loader = new FXMLLoader();
         // 设置加载的FXML文件路径。
-        loader.setLocation(getClass().getResource("/com/secwsystem/teacher/main_manager.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/teacher/main_manager.fxml"));
         // 通过loader加载FXML文件，得到界面根节点。
         AnchorPane root = loader.load();
         // 创建场景对象，设置场景的根节点为加载的界面。
@@ -118,7 +122,8 @@ public static void main(String[] args) {
         // 创建FXMLLoader对象，用于加载FXML文件。
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的位置，该文件定义了修改密码窗口的布局。
-        loader.setLocation(getClass().getResource("/com/secwsystem/teacher/change_password.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/teacher/change_password.fxml"));
         // 通过loader加载FXML文件，返回界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，将加载的界面作为场景的内容。
@@ -155,7 +160,8 @@ public static void main(String[] args) {
         // 初始化FXMLLoader，用于加载用户界面。
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML资源的位置。
-        loader.setLocation(getClass().getResource("/com/secwsystem/teacher/change_phonenumber.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/teacher/change_phonenumber.fxml"));
         // 通过loader加载FXML资源，得到根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，设置根节点为加载的界面。
@@ -193,7 +199,8 @@ public static void main(String[] args) {
         // 初始化FXMLLoader，用于加载用户界面的定义。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源位置。
-        loader.setLocation(getClass().getResource("/com/secwsystem/teacher/change_email.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/teacher/change_email.fxml"));
         // 通过loader加载用户界面，得到界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的Scene对象，包含加载的用户界面。
@@ -228,7 +235,8 @@ public static void main(String[] args) {
         // 创建FXMLLoader实例，用于加载FXML文件。
         FXMLLoader loader = new FXMLLoader();
         // 设置FXMLLoader的资源位置，指向修改地址的界面文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/teacher/change_address.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/teacher/change_address.fxml"));
         // 使用FXMLLoader加载界面，返回界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的Scene对象，设置其内容为加载的界面根节点。
@@ -263,7 +271,8 @@ public static void main(String[] args) {
         // 初始化FXMLLoader，用于加载用户界面。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径。
-        loader.setLocation(getClass().getResource("/com/secwsystem/teacher/add_course.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/teacher/add_course.fxml"));
         // 加载用户界面，返回根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，设置根节点为加载的用户界面。
@@ -290,9 +299,9 @@ public static void main(String[] args) {
      * 显示一个包含特定标题、文本和类型的警告对话框。
      * 根据信号值决定是否需要用户确认操作。
      *
-     * @param title 警告对话框的标题。
-     * @param text 警告对话框中显示的文本内容。
-     * @param type 警告对话框的类型，决定对话框的图标和按钮类型。
+     * @param title  警告对话框的标题。
+     * @param text   警告对话框中显示的文本内容。
+     * @param type   警告对话框的类型，决定对话框的图标和按钮类型。
      * @param signal 控制对话框行为的信号，1 表示需要用户确认，其他值则不需要。
      * @return 如果对话框需要用户确认且用户点击了确认按钮，则返回 true；否则返回 false。
      */
@@ -300,20 +309,20 @@ public static void main(String[] args) {
         boolean flag = false;
         // 创建一个警告对话框实例，类型由参数 type 指定。
         Alert alert = new Alert(type);
-        alert.setTitle(title);  // 设置对话框标题。
-        alert.setHeaderText(null);  // 清空对话框的头信息。
-        alert.setContentText(text);  // 设置对话框的文本内容。
+        alert.setTitle(title); // 设置对话框标题。
+        alert.setHeaderText(null); // 清空对话框的头信息。
+        alert.setContentText(text); // 设置对话框的文本内容。
 
         if (signal == 1) {
             // 如果信号值为 1，显示对话框并等待用户响应。
             Optional<ButtonType> result = alert.showAndWait();
-            alert.setContentText("确认这样选择吗？");  // 在用户响应后，更改对话框文本为确认信息。
+            alert.setContentText("确认这样选择吗？"); // 在用户响应后，更改对话框文本为确认信息。
             // 根据用户的响应决定 flag 的值，如果用户点击了 OK 按钮，则 flag 为 true。
             flag = (result.get() == ButtonType.OK);
         } else {
             // 如果信号值不为 1，直接显示对话框并等待用户响应，不需要确认。
             alert.showAndWait();
         }
-        return flag;  // 返回用户是否确认了操作的结果。
+        return flag; // 返回用户是否确认了操作的结果。
     }
 }

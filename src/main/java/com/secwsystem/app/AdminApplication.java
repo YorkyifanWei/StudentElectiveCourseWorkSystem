@@ -17,6 +17,7 @@ public class AdminApplication extends Application {
     /**
      * 程序的入口点。
      * 调用launch方法启动应用程序，传入命令行参数args。
+     * 
      * @param args 命令行参数，用于传递给应用程序的启动参数。
      */
     public static void main(String[] args) {
@@ -40,12 +41,13 @@ public class AdminApplication extends Application {
      * 它使用FXMLLoader来加载界面，通过设置窗口标题和场景，为用户提供交互界面。
      * 同时，它还通过获取控制器实例，将主舞台传递给控制器，以便控制器可以操作窗口。
      */
-    public void initLogin(){
-        try{
+    public void initLogin() {
+        try {
             // 创建FXMLLoader实例，用于加载FXML文件
             FXMLLoader loader = new FXMLLoader();
             // 设置FXML文件的位置，使用相对路径从类路径中加载资源
-            loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminLogin.fxml"));
+            loader.setLocation(getClass()
+                    .getResource("/com/secwsystem/admin/AdminLogin.fxml"));
             // 加载FXML文件，返回界面根节点
             AnchorPane root = loader.load();
             // 创建场景，并将加载的界面根节点设置为场景的内容
@@ -79,7 +81,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载界面布局文件。
         FXMLLoader loader = new FXMLLoader();
         // 设置加载的FXML文件路径，使用相对路径从类路径中获取。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminMain.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminMain.fxml"));
         // 通过loader加载FXML文件，返回界面根节点。
         AnchorPane root = loader.load();
         // 创建Scene对象，设置场景为加载的界面根节点。
@@ -112,7 +115,8 @@ public class AdminApplication extends Application {
         // 初始化FXMLLoader，用于加载用户界面的定义。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径，加载添加课程的FXML文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminAddCourse.fxml"));
         // 通过loader加载FXML文件，得到用户界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，设置其内容为加载的用户界面根节点。
@@ -134,6 +138,7 @@ public class AdminApplication extends Application {
         // 显示舞台。
         stage.show();
     }
+
     /**
      * 打开一个新窗口用于添加讲师。
      * 该方法通过FXMLLoader加载一个用户界面，配置窗口属性，并显示该窗口。
@@ -145,7 +150,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader实例，用于加载用户界面的定义。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径，加载添加讲师的界面。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddTeacher.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminAddTeacher.fxml"));
         // 通过loader加载界面，得到界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，将加载的界面作为其内容。
@@ -167,6 +173,7 @@ public class AdminApplication extends Application {
         // 显示舞台。
         stage.show();
     }
+
     /**
      * 打开一个新窗口用于添加学生信息。
      * 此方法通过FXMLLoader加载一个新的用户界面，用于输入和提交学生信息。
@@ -177,7 +184,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader实例，用于加载用户界面资源。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面资源的位置，指向添加学生界面的FXML文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddStudent.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminAddStudent.fxml"));
         // 通过loader加载界面资源，返回界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的Scene对象，将加载的界面作为其内容。
@@ -199,6 +207,7 @@ public class AdminApplication extends Application {
         // 显示新窗口。
         stage.show();
     }
+
     /**
      * 弹出一个窗口用于用户更改密码。
      * 此方法加载并显示一个FXML界面，该界面专门用于用户更改其账户密码。
@@ -213,7 +222,8 @@ public class AdminApplication extends Application {
         // 初始化FXMLLoader，用于加载界面布局
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的位置
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminChangePassword.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminChangePassword.fxml"));
         // 加载FXML文件，得到界面根节点
         AnchorPane root = loader.load();
         // 创建场景，并将根节点设置为该场景的内容
@@ -235,6 +245,7 @@ public class AdminApplication extends Application {
         // 显示舞台，并以模态方式等待用户操作
         stage.showAndWait();
     }
+
     /**
      * 弹出修改课程信息的窗口。
      * 该方法通过FXMLLoader加载修改课程的用户界面，并设置相应的舞台属性，最后显示这个舞台。
@@ -246,7 +257,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载用户界面。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径，加载修改课程的FXML文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminModifyCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminModifyCourse.fxml"));
         // 通过loader加载FXML文件，得到根节点AnchorPane。
         AnchorPane root = loader.load();
         // 创建一个新的场景，将加载的根节点设置为此场景的内容。
@@ -267,6 +279,7 @@ public class AdminApplication extends Application {
         // 显示舞台，并等待用户操作完毕。
         stage.showAndWait();
     }
+
     /**
      * 弹出修改讲师信息的窗口。
      * 该方法通过FXMLLoader加载修改讲师界面的FXML文件，设置界面标题，并显示这个窗口。
@@ -278,7 +291,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载界面布局文件
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的路径，该路径为相对于类路径的路径
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminModifyTeacher.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminModifyTeacher.fxml"));
         // 通过loader加载界面布局文件，返回布局根节点
         AnchorPane root = loader.load();
         // 创建新的场景，将加载的界面作为场景的内容
@@ -299,6 +313,7 @@ public class AdminApplication extends Application {
         // 显示舞台，并等待用户操作完成后关闭舞台
         stage.showAndWait();
     }
+
     /**
      * 弹出修改学生信息的窗口。
      * 该方法通过FXMLLoader加载修改学生信息的用户界面，并设置相应的窗口标题和场景。
@@ -310,7 +325,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载用户界面。
         FXMLLoader loader = new FXMLLoader();
         // 设置用户界面的资源路径。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminModifyStudent.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminModifyStudent.fxml"));
         // 通过loader加载用户界面，得到根节点。
         AnchorPane root = loader.load();
         // 创建新的场景，设置根节点为加载的用户界面。
@@ -331,6 +347,7 @@ public class AdminApplication extends Application {
         // 显示舞台，并等待用户操作完毕。
         stage.showAndWait();
     }
+
     /**
      * 弹出课程查询窗口
      * 
@@ -345,7 +362,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载FXML文件
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的位置，该文件定义了课程查询窗口的界面布局
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminGetCourse.fxml"));
         // 通过loader加载FXML文件，得到界面的根节点
         AnchorPane root = loader.load();
         // 创建Scene对象，设置其根节点为加载得到的界面根节点
@@ -359,6 +377,7 @@ public class AdminApplication extends Application {
         // 显示Stage，并等待用户操作
         stage.showAndWait();
     }
+
     /**
      * 弹出讲师查询窗口
      * 
@@ -371,7 +390,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载FXML文件
         FXMLLoader loader = new FXMLLoader();
         // 设置FXMLLoader的资源位置，指向讲师查询界面的FXML文件
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetTeacher.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminGetTeacher.fxml"));
         // 使用FXMLLoader加载界面，并返回加载后的根节点
         AnchorPane root = loader.load();
         // 创建一个新的Scene对象，用于包含加载后的界面
@@ -387,6 +407,7 @@ public class AdminApplication extends Application {
         // 显示Stage，并等待用户操作完成后关闭窗口
         stage.showAndWait();
     }
+
     /**
      * 弹出学生查询窗口
      * 
@@ -399,7 +420,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader实例，用于加载界面布局文件
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的路径，该路径是一个相对路径，指向com.secwsystem.admin.get_Stu_admin.fxml文件
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetStudent.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminGetStudent.fxml"));
         // 通过loader加载FXML文件，返回一个AnchorPane对象，该对象是界面的根节点
         AnchorPane root = loader.load();
         // 创建一个新的Scene对象，将加载的界面作为其内容
@@ -415,6 +437,7 @@ public class AdminApplication extends Application {
         // 显示窗口，并等待用户操作，直到窗口关闭
         stage.showAndWait();
     }
+
     /**
      * 通过加载FXML文件来初始化并展示查看教师信息的窗口。
      * 此方法主要负责窗口的布局和展示，不涉及具体的业务逻辑处理。
@@ -425,7 +448,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader对象，用于加载FXML文件。
         FXMLLoader loader = new FXMLLoader();
         // 设置FXML文件的位置，该文件位于资源目录下，用于定义窗口的布局。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetTeacherFromCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminGetTeacherFromCourse.fxml"));
         // 通过loader加载FXML文件，得到窗口的根节点。
         AnchorPane root = loader.load();
 
@@ -442,6 +466,7 @@ public class AdminApplication extends Application {
         // 显示舞台，并等待用户操作完成后关闭舞台。
         stage.showAndWait();
     }
+
     /**
      * 通过FXML加载界面，展示所有课下教师的列表。
      * 此方法用于打开一个新窗口，显示从课程中获取的教师列表。
@@ -454,7 +479,8 @@ public class AdminApplication extends Application {
         // 初始化FXMLLoader，用于加载界面资源。
         FXMLLoader loader = new FXMLLoader();
         // 设置界面资源的位置，路径指向fxml文件。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetTeachersFromCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminGetTeachersFromCourse.fxml"));
         // 通过loader加载界面，得到界面的根节点。
         AnchorPane root = loader.load();
         // 创建一个新的场景，将加载的界面作为其内容。
@@ -470,6 +496,7 @@ public class AdminApplication extends Application {
         // 显示舞台，并等待用户操作完成后关闭。
         stage.showAndWait();
     }
+
     /**
      * 通过FXML加载界面，展示从课程中获取的学生列表。
      * 此方法用于打开一个新窗口，显示指定课程的学生列表。
@@ -482,7 +509,8 @@ public class AdminApplication extends Application {
         // 创建FXMLLoader实例，用于加载界面资源。
         FXMLLoader loader = new FXMLLoader();
         // 设置界面资源的位置，路径相对于项目的根目录。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetStudentFromCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminGetStudentFromCourse.fxml"));
         // 加载界面资源，返回界面的根节点。
         AnchorPane root = loader.load();
         // 创建新的Scene对象，设置其内容为加载的界面根节点。
@@ -498,16 +526,19 @@ public class AdminApplication extends Application {
         // 显示窗口，并等待用户操作完成。
         stage.showAndWait();
     }
+
     /**
      * 通过FXMLLoader加载界面，用于展示从特定课程中获取的学生列表。
      * 此方法初始化一个新的舞台，设置其标题和场景，然后展示这个舞台。
+     * 
      * @throws IOException 如果加载界面时发生IO异常，则抛出此异常。
      */
     public void getStudentsFromCourse() throws IOException {
         // 创建FXMLLoader实例，用于加载界面资源。
         FXMLLoader loader = new FXMLLoader();
         // 设置界面资源的位置，路径指向com.secwsystem.admin.AdminGetStudentsFromCourse.fxml。
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminGetStudentsFromCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminGetStudentsFromCourse.fxml"));
         // 通过loader加载界面，返回界面的根节点。
         AnchorPane root = loader.load();
         // 创建新的场景，将加载的界面作为其内容。
@@ -523,6 +554,7 @@ public class AdminApplication extends Application {
         // 显示舞台，并等待用户操作完成后关闭舞台。
         stage.showAndWait();
     }
+
     /**
      * 将教师添加到课程中的功能方法。
      * 该方法通过FXMLLoader加载用户界面资源，创建一个新的舞台，并设置相应的场景和标题，
@@ -533,7 +565,8 @@ public class AdminApplication extends Application {
     public void addTeacherIntoCourse() throws IOException {
         // 使用FXMLLoader加载添加教师到课程的用户界面资源
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddTeacherIntoCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminAddTeacherIntoCourse.fxml"));
         // 加载用户界面资源并将其作为根节点
         AnchorPane root = loader.load();
 
@@ -555,6 +588,7 @@ public class AdminApplication extends Application {
         // 显示舞台，并等待用户操作完成后关闭舞台
         stage.showAndWait();
     }
+
     /**
      * 将学生添加到课程中的功能方法。
      * 该方法通过FXMLLoader加载用户界面资源，创建一个新的舞台，并设置相应的场景和标题，
@@ -565,7 +599,8 @@ public class AdminApplication extends Application {
     public void addStudentIntoCourse() throws IOException {
         // 使用FXMLLoader加载添加学生到课程的用户界面资源。
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/com/secwsystem/admin/AdminAddStudentIntoCourse.fxml"));
+        loader.setLocation(getClass()
+                .getResource("/com/secwsystem/admin/AdminAddStudentIntoCourse.fxml"));
         // 加载用户界面资源并将其作为根节点。
         AnchorPane root = loader.load();
 
@@ -584,16 +619,17 @@ public class AdminApplication extends Application {
         // 显示舞台，并等待用户操作。
         stage.showAndWait();
     }
+
     /**
      * 显示一个警告对话框，根据用户的选择返回布尔值。
      * 
-     * @param title 警告对话框的标题。
-     * @param text 警告对话框显示的文本内容。
-     * @param type 警告对话框的类型，确定对话框的图标和按钮类型。
+     * @param title  警告对话框的标题。
+     * @param text   警告对话框显示的文本内容。
+     * @param type   警告对话框的类型，确定对话框的图标和按钮类型。
      * @param signal 用于决定是否需要用户确认的标志位。如果为1，则要求用户确认；否则，不需要用户确认。
      * @return 如果用户点击了确认按钮，则返回true；否则返回false。
      */
-    public boolean showMessage(String title, String text, Alert.AlertType type, int signal){
+    public boolean showMessage(String title, String text, Alert.AlertType type, int signal) {
         // 初始化返回值为false，表示默认情况下用户没有确认。
         boolean flag = false;
         // 创建一个警告对话框，类型由参数type指定。
@@ -605,7 +641,7 @@ public class AdminApplication extends Application {
         // 设置对话框显示的文本内容。
         alert.setContentText(text);
         // 如果标志位I为1，要求用户确认操作。
-        if(signal == 1) {
+        if (signal == 1) {
             // 显示对话框并等待用户操作。
             Optional<ButtonType> result = alert.showAndWait();
             // 修改对话框文本为确认信息。
