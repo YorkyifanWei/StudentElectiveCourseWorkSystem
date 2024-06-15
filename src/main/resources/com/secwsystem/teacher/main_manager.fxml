@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.teacher.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.teacher.TeacherMainController">
     <children>
         <VBox layoutY="38.0" prefHeight="762.0" prefWidth="167.0">
             <children>
@@ -79,7 +79,7 @@
                </font>
             </Label>
             <TextField fx:id="a_main_idcard" editable="false" />
-                <Button fx:id="btn_cancel" alignment="CENTER" mnemonicParsing="false" onAction="#CancelEvent" prefHeight="39.0" prefWidth="86.0" text="取消" visible="false">
+                <Button fx:id="btn_cancel" alignment="CENTER" mnemonicParsing="false" onAction="#cancelEvent" prefHeight="39.0" prefWidth="86.0" text="取消" visible="false">
                     <font>
                         <Font size="15.0" />
                     </font>
@@ -91,10 +91,10 @@
                <contextMenu>
                   <ContextMenu>
                     <items>
-                      <MenuItem fx:id="change_password" mnemonicParsing="false" onAction="#change_password_event" text="修改密码" />
-                        <MenuItem fx:id="change_phonenumber" mnemonicParsing="false" onAction="#change_phonenumber_event" text="修改手机号" />
-                        <MenuItem fx:id="change_email" mnemonicParsing="false" onAction="#change_email_event" text="修改邮箱" />
-                        <MenuItem fx:id="change_address" mnemonicParsing="false" onAction="#change_address_event" text="修改办公室地址" />
+                      <MenuItem fx:id="change_password" mnemonicParsing="false" onAction="#changePasswordEvent" text="修改密码" />
+                        <MenuItem fx:id="change_phonenumber" mnemonicParsing="false" onAction="#changePhoneNumberEvent" text="修改手机号" />
+                        <MenuItem fx:id="change_email" mnemonicParsing="false" onAction="#changeEmailEvent" text="修改邮箱" />
+                        <MenuItem fx:id="change_address" mnemonicParsing="false" onAction="#changeAddressEvent" text="修改办公室地址" />
                     </items>
                   </ContextMenu>
                </contextMenu>
@@ -168,6 +168,6 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="teacher_add_course" layoutX="1043.0" layoutY="46.0" mnemonicParsing="false" onAction="#teacher_add_course_event" prefHeight="39.0" prefWidth="77.0" text="添加课程" />
+      <Button fx:id="teacher_add_course" layoutX="1043.0" layoutY="46.0" mnemonicParsing="false" onAction="#teacherAddCourseEvent" prefHeight="39.0" prefWidth="77.0" text="添加课程" />
     </children>
 </AnchorPane>

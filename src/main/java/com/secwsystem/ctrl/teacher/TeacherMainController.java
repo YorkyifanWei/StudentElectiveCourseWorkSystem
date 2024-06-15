@@ -20,239 +20,267 @@ import java.util.ResourceBundle;
 public class TeacherMainController implements Initializable {
 
     @FXML
-    private ListView<?> CourseList;
+    private ListView<?> courseList; // 教师课程列表视图
 
     @FXML
-    private TextField a_main_address;
+    private TextField tAddress; // 教师地址文本框
 
     @FXML
-    private TextField a_main_email;
+    private TextField tEmail; // 教师邮箱文本框
 
     @FXML
-    private TextField a_main_idcard;
+    private TextField tIdcard; // 教师身份证文本框
 
     @FXML
-    private TextField a_main_name;
+    private TextField tName; // 教师姓名文本框
 
     @FXML
-    private TextField a_main_school;
+    private TextField tSchool; // 教师所属学校文本框
 
     @FXML
-    private TextField a_main_sex;
+    private TextField tSex; // 教师性别文本框
 
     @FXML
-    private TextField a_main_tid;
+    private TextField tid; // 教师ID文本框
 
     @FXML
-    private TextField a_main_title;
-    @FXML
-    private TextField a_main_phonenumber;
-
+    private TextField tTitle; // 教师职称文本框
 
     @FXML
-    private Button btn_alter;
+    private TextField tPhoneNumber; // 教师电话文本框
 
     @FXML
-    private Button btn_cancel;
+    private Button buttonAlter; // 修改信息按钮
 
     @FXML
-    private MenuItem change_address;
+    private Button buttonCancel; // 取消按钮
 
     @FXML
-    private MenuItem change_email;
+    private MenuItem changeAddress; // 修改地址菜单项
 
     @FXML
-    private MenuItem change_password;
+    private MenuItem changeEmail; // 修改邮箱菜单项
 
     @FXML
-    private MenuItem change_phonenumber;
+    private MenuItem changePassword; // 修改密码菜单项
 
     @FXML
-    private TableColumn<Course, String> col_c_capacity1;
+    private MenuItem changePhoneNumber; // 修改电话菜单项
 
     @FXML
-    private TableColumn<Course, String> col_c_capacity11;
+    private TableColumn<Course, String> columnCCapacity; // 课程容量列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_current1;
+    private TableColumn<Course, String> columnSelectCCapacity; // 选课容量列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_current11;
+    private TableColumn<Course, String> columnCCurrent; // 课程当前选课人数列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_end1;
+    private TableColumn<Course, String> columnSelectCCurrent; // 选课当前选课人数列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_end11;
+    private TableColumn<Course, String> columnCEnd; // 课程结束时间列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_info1;
+    private TableColumn<Course, String> columnSelectCEnd; // 选课结束时间列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_info11;
+    private TableColumn<Course, String> columnCInfo; // 课程信息列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_init1;
+    private TableColumn<Course, String> columnSelectCInfo; // 选课信息列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_init11;
+    private TableColumn<Course, String> columnCInit; // 课程开课时间列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_location1;
+    private TableColumn<Course, String> columnSelectCInit; // 选课开课时间列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_location11;
+    private TableColumn<Course, String> columnCLocation; // 课程地点列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_name1;
+    private TableColumn<Course, String> columnSelectCLocation; // 选课地点列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_name11;
+    private TableColumn<Course, String> columnCName; // 课程名称列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_period1;
+    private TableColumn<Course, String> columnSelectCName; // 选课名称列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_period11;
+    private TableColumn<Course, String> columnCPeriod; // 课程周期列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_school1;
+    private TableColumn<Course, String> columnSelectCPeriod; // 选课周期列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_school11;
+    private TableColumn<Course, String> columnCSchool; // 课程所属学院列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_time1;
+    private TableColumn<Course, String> columnSelectCSchool; // 选课所属学院列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_time11;
+    private TableColumn<Course, String> columnCTime; // 课程时间列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_type1;
+    private TableColumn<Course, String> columnSelectCTime; // 选课时间列定义
 
     @FXML
-    private TableColumn<Course, String> col_c_type11;
+    private TableColumn<Course, String> columnCType; // 课程类型列定义
 
     @FXML
-    private TableColumn<Course, String> col_cid1;
+    private TableColumn<Course, String> columnSelectCType; // 选课类型列定义
 
     @FXML
-    private TableColumn<Course, String> col_cid11;
+    private TableColumn<Course, String> columnCid; // 课程ID列定义
 
     @FXML
-    private TableColumn<Course, String> col_id1;
+    private TableColumn<Course, String> columnSelectCid; // 选课ID列定义
 
     @FXML
-    private TableColumn<Course, String> col_id11;
+    private TableColumn<Course, String> columnId; // 课程ID列定义
 
     @FXML
-    private TableView<Course> tableview1;
+    private TableColumn<Course, String> columnSelectId; // 选课ID列定义
 
     @FXML
-    private TableView<Course> tableview11;
+    private TableView<Course> tableView; // 课程列表视图
 
     @FXML
-    private Button teacher_add_course;
+    private TableView<Course> tableViewSelect; // 教师所授课程列表视图
 
     @FXML
-    private Stage stage;
+    private Button buttonAddCourse; // 添加课程按钮
 
+    @FXML
+    private Stage stage; // 当前舞台
+
+    /**
+     * 获取当前舞台。
+     *
+     * @return 当前Stage对象
+     */
     public Stage getStage() {
         return stage;
     }
 
+    /**
+     * 设置当前舞台。
+     *
+     * @param stage 当前Stage对象
+     */
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
+    // 修改事件处理方法
     @FXML
-    void AlterEvent(ActionEvent event) {
+    void alterEvent(ActionEvent event) {}
 
-    }
-
+    // 取消事件处理方法
     @FXML
-    void CancelEvent(ActionEvent event) {
+    void cancelEvent(ActionEvent event) {}
 
-    }
-
+    // 修改邮箱事件处理方法
     @FXML
-    void change_email_event() throws IOException {
-        new TeacherApplication().ChangeEmail();
+    void changeEmailEvent() throws IOException {
+        new TeacherApplication().changeEmail();
     }
 
+    // 修改密码事件处理方法
     @FXML
-    void change_password_event() throws IOException {
-        new TeacherApplication().ChangePassword();
-
+    void changePasswordEvent() throws IOException {
+        new TeacherApplication().changePassword();
     }
 
-
+    // 修改电话事件处理方法
     @FXML
-    void change_phonenumber_event() throws IOException {
-        new TeacherApplication().ChangePhonenumber();
+    void changePhoneNumberEvent() throws IOException {
+        new TeacherApplication().changePhoneNumber();
     }
 
+    // 修改地址事件处理方法
     @FXML
-    public void change_address_event() throws IOException {
-        new TeacherApplication().ChangeAddress();
+    void changeAddressEvent() throws IOException {
+        new TeacherApplication().changeAddress();
     }
 
-    public void teacher_add_course_event() throws IOException {
-        new TeacherApplication().AddCourse();
+    /**
+     * 触发教师添加课程的事件。
+     * 此方法模拟教师应用程序中添加新课程的操作。当调用此方法时，它将启动教师应用程序并执行添加课程的功能。
+     * 主要用于教学或测试环境中，以自动化或简化课程添加的过程。
+     *
+     * @throws IOException 如果在与教师应用程序交互过程中发生I/O错误，将抛出此异常。
+     */
+    public void teacherAddCourseEvent() throws IOException {
+        new TeacherApplication().addCourse();
     }
 
+    /**
+     * 控制器初始化方法，用于在界面加载时获取教师信息和课程信息，并展示在界面上。
+     * @param url 页面的URL地址，用于资源定位。
+     * @param resourceBundle 页面的资源包，用于国际化等。
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // 将当前控制器实例注册到TeacherContext中，以便于其他地方访问。
         com.secwsystem.ctrl.teacher.TeacherContext.controllers.put(this.getClass().getSimpleName(), this);
-        //初始化页面
+
+        // 初始化教师信息
+        // 初始化教师信息
         TeacherDAO teacherDAO = new TeacherDAO();
         TeacherLogin controller = (TeacherLogin) TeacherContext.controllers.get(TeacherLogin.class.getSimpleName());
-        String tid = controller.gettid();
-        a_main_tid.setText(tid);
-        a_main_name.setText(teacherDAO.getPublic(tid).getTName());
-        a_main_title.setText(teacherDAO.getPublic(tid).getTTitle());
-        a_main_school.setText(teacherDAO.getPublic(tid).getTSchool());
-        a_main_sex.setText(teacherDAO.getPublic(tid).getTSex());
-        a_main_phonenumber.setText(teacherDAO.getPublic(tid).getTPhoneNumber());
-        a_main_email.setText(teacherDAO.getPublic(tid).getTEmail());
-        a_main_address.setText(teacherDAO.getPublic(tid).getTAddress());
-        a_main_idcard.setText(teacherDAO.getPrivate(tid).getTIdcard());
+        String tid = controller.getTid();
+        this.tid.setText(tid);
+        tName.setText(teacherDAO.getPublic(tid).getTName());
+        tTitle.setText(teacherDAO.getPublic(tid).getTTitle());
+        tSchool.setText(teacherDAO.getPublic(tid).getTSchool());
+        tSex.setText(teacherDAO.getPublic(tid).getTSex());
+        tPhoneNumber.setText(teacherDAO.getPublic(tid).getTPhoneNumber());
+        tEmail.setText(teacherDAO.getPublic(tid).getTEmail());
+        tAddress.setText(teacherDAO.getPublic(tid).getTAddress());
+        tIdcard.setText(teacherDAO.getPrivate(tid).getTIdcard());
 
-
+        // 初始化课程信息
         CourseDAO courseDAO = new CourseDAO();
+        ObservableList<Course> courses = FXCollections.observableArrayList(courseDAO.getAll());
+        tableView.setItems(courses);
 
-        ObservableList<Course> all_list1 = FXCollections.observableArrayList(courseDAO.getAll());
+        // 为表格的每一列设置数据绑定
+        columnId.setCellValueFactory(new PropertyValueFactory<Course, String>("id"));
+        columnCid.setCellValueFactory(new PropertyValueFactory<Course, String>("cid"));
+        columnCName.setCellValueFactory(new PropertyValueFactory<Course, String>("c_name"));
+        columnCInfo.setCellValueFactory(new PropertyValueFactory<Course, String>("c_info"));
+        columnCTime.setCellValueFactory(new PropertyValueFactory<Course, String>("c_time"));
+        columnCInit.setCellValueFactory(new PropertyValueFactory<Course, String>("c_init"));
+        columnCEnd.setCellValueFactory(new PropertyValueFactory<Course, String>("c_end"));
+        columnCLocation.setCellValueFactory(new PropertyValueFactory<Course, String>("c_location"));
+        columnCType.setCellValueFactory(new PropertyValueFactory<Course, String>("c_type"));
+        columnCSchool.setCellValueFactory(new PropertyValueFactory<Course, String>("c_school"));
+        columnCPeriod.setCellValueFactory(new PropertyValueFactory<Course, String>("c_period"));
+        columnCCapacity.setCellValueFactory(new PropertyValueFactory<Course, String>("c_capacity"));
+        columnCCurrent.setCellValueFactory(new PropertyValueFactory<Course, String>("c_current"));
 
-        tableview1.setItems(all_list1);
-        col_id1.setCellValueFactory(new PropertyValueFactory<Course, String>("id"));
-        col_cid1.setCellValueFactory(new PropertyValueFactory<Course, String>("cid"));
-        col_c_name1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_name"));
-        col_c_info1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_info"));
-        col_c_time1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_time"));
-        col_c_init1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_init"));
-        col_c_end1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_end"));
-        col_c_location1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_location"));
-        col_c_type1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_type"));
-        col_c_school1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_school"));
-        col_c_period1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_period"));
-        col_c_capacity1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_capacity"));
-        col_c_current1.setCellValueFactory(new PropertyValueFactory<Course, String>("c_current"));
+        // 初始化教师所教授的课程信息
+        ObservableList<Course> coursesSelect = FXCollections.observableArrayList(courseDAO.getCoursesFromTeacher(tid));
+        tableViewSelect.setItems(coursesSelect);
 
-        ObservableList<Course> all_list2 = FXCollections.observableArrayList(courseDAO.getCoursesFromTeacher(tid));
-        tableview11.setItems(all_list2);
-        col_id11.setCellValueFactory(new PropertyValueFactory<Course, String>("id"));
-        col_cid11.setCellValueFactory(new PropertyValueFactory<Course, String>("cid"));
-        col_c_name11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_name"));
-        col_c_info11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_info"));
-        col_c_time11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_time"));
-        col_c_init11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_init"));
-        col_c_end11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_end"));
-        col_c_location11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_location"));
-        col_c_type11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_type"));
-        col_c_school11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_school"));
-        col_c_period11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_period"));
-        col_c_capacity11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_capacity"));
-        col_c_current11.setCellValueFactory(new PropertyValueFactory<Course, String>("c_current"));
+        // 为选中课程表格的每一列设置数据绑定
+        columnSelectId.setCellValueFactory(new PropertyValueFactory<Course, String>("id"));
+        columnSelectCid.setCellValueFactory(new PropertyValueFactory<Course, String>("cid"));
+        columnSelectCName.setCellValueFactory(new PropertyValueFactory<Course, String>("c_name"));
+        columnSelectCInfo.setCellValueFactory(new PropertyValueFactory<Course, String>("c_info"));
+        columnSelectCTime.setCellValueFactory(new PropertyValueFactory<Course, String>("c_time"));
+        columnSelectCInit.setCellValueFactory(new PropertyValueFactory<Course, String>("c_init"));
+        columnSelectCEnd.setCellValueFactory(new PropertyValueFactory<Course, String>("c_end"));
+        columnSelectCLocation.setCellValueFactory(new PropertyValueFactory<Course, String>("c_location"));
+        columnSelectCType.setCellValueFactory(new PropertyValueFactory<Course, String>("c_type"));
+        columnSelectCSchool.setCellValueFactory(new PropertyValueFactory<Course, String>("c_school"));
+        columnSelectCPeriod.setCellValueFactory(new PropertyValueFactory<Course, String>("c_period"));
+        columnSelectCCapacity.setCellValueFactory(new PropertyValueFactory<Course, String>("c_capacity"));
+        columnSelectCCurrent.setCellValueFactory(new PropertyValueFactory<Course, String>("c_current"));
 
     }
 }

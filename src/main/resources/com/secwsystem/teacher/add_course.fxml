@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="676.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.teacher.AddCourseController">
+<AnchorPane prefHeight="676.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.secwsystem.ctrl.teacher.TeacherAddCourse">
    <children>
       <Label alignment="CENTER" layoutX="28.0" layoutY="30.0" prefHeight="34.0" prefWidth="58.0" text="编号：">
          <font>
@@ -56,19 +56,19 @@
          </font>
       </Label>
       <TextField fx:id="CouName" layoutX="105.0" layoutY="85.0" prefHeight="23.0" prefWidth="288.0" />
-      <TextField fx:id="CouTea" layoutX="87.0" layoutY="128.0" onAction="#GoToTeaEvent" prefHeight="23.0" prefWidth="307.0" />
+      <TextField fx:id="CouTea" layoutX="87.0" layoutY="128.0" onAction="#goToTeacherEvent" prefHeight="23.0" prefWidth="307.0" />
       <TextField fx:id="CouType" layoutX="85.0" layoutY="225.0" prefHeight="23.0" prefWidth="307.0" />
       <TextArea fx:id="CouInfo" layoutX="27.0" layoutY="470.0" prefHeight="132.0" prefWidth="372.0" />
       <TextField fx:id="CouTimeAndLocation" layoutX="144.0" layoutY="176.0" prefHeight="23.0" prefWidth="250.0" />
       <TextField fx:id="CouSchool" layoutX="120.0" layoutY="274.0" prefHeight="23.0" prefWidth="271.0" />
       <TextField fx:id="CouPeriod" layoutX="87.0" layoutY="329.0" prefHeight="23.0" prefWidth="307.0" />
       <TextField fx:id="CouCapacity" layoutX="120.0" layoutY="381.0" prefHeight="23.0" prefWidth="271.0" />
-      <Button fx:id="btn_set" layoutX="93.0" layoutY="619.0" mnemonicParsing="false" onAction="#SetEvent" prefHeight="39.0" prefWidth="68.0" text="确定">
+      <Button fx:id="btn_set" layoutX="93.0" layoutY="619.0" mnemonicParsing="false" onAction="#setEvent" prefHeight="39.0" prefWidth="68.0" text="确定">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="btn_cancel" layoutX="249.0" layoutY="619.0" mnemonicParsing="false" onAction="#CancelEvent" prefHeight="39.0" prefWidth="68.0" text="取消">
+      <Button fx:id="btn_cancel" layoutX="249.0" layoutY="619.0" mnemonicParsing="false" onAction="#cancelEvent" prefHeight="39.0" prefWidth="68.0" text="取消">
          <font>
             <Font size="19.0" />
          </font>
