@@ -14,8 +14,6 @@ import java.util.Optional;
 
 public class AdminApplication extends Application {
 
-
-
     /**
      * 程序的入口点。
      * 调用launch方法启动应用程序，传入命令行参数args。
